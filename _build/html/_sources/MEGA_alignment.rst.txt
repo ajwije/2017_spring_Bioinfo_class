@@ -55,6 +55,17 @@ How to make an alignment using MEGA
 Edit the alignments 
 ============================
 
+:Step 1: You can insert gaps, delete blocks, and delete residues.
 
-   
+**Be very careful when you edit a sequence alignment**. It should be biologically meaningful. 
+
+
+
+Exporting MSA
+=========================
+
+Mega allows to export the MSA in different formats. 
+
+
+  
 
