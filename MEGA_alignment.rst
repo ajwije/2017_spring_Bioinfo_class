@@ -59,7 +59,7 @@ Edit the alignments
 
 **Be very careful when you edit a sequence alignment**. It should be biologically meaningful. 
 
-.. figure:: img/mega_6.png
+.. figure:: img/mega_7.png
 
 Exporting MSA
 =========================
