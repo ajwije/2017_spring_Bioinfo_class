@@ -47,7 +47,7 @@ How to make an alignment using MEGA
 
 :Step 6: From Edit, select all sequences. To do an alignment using Muscle,  click on Muscle tab. 
 
-.. figure:: img/mega_6.png
+.. figure:: img/mega_7b.png
 
 :Step 7: Use default options and perform an alignment. To learn more about the options, go to the `MEGA manual <http://www.megasoftware.net/webhelp/helpfile.htm#walk_through_mega/hc_first_time_user.htm>`_.
 

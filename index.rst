@@ -12,6 +12,8 @@ Welcome to Inclass Activities's documentation!
    
    MEGA_alignment.rst
    
+   phylogenetics.rst
+   
 
 
 
