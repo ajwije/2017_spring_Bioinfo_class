@@ -9,9 +9,9 @@
 .. figure:: img/UnivLogo_Stack_2C_Dark.png
    :align: right
 
-*****************************
+***********************************
 Steps of building a tree (Part II)
-*****************************
+************************************
 
 Make multiple sequence alignment for Globin gene family
 ----------------------------------------------------------
@@ -104,14 +104,18 @@ Building Phylogenetic trees
 	:B: In MrBayes select Poisson amino acid model with equal rates of substitution.
     :C: Select prior parameters (e.g. equal, fixed frequencies for the states; equal probability for all topologies; unconstrained branch lengths).
     :D: Run 1,000,000 trials for Monte Carlo Markov Chain estimation of the posterior distribution.
-    :E: Obtain phylogram.
+    :E: Obtain phylogram
     :F: Export tree files 
+    :G: View in MEGA software
     
 |
 |
 .. figure:: img/mega_15.png    
 
-    :G: View in MEGA software.
+    
+    
+
+    
 |
 |
 .. figure:: img/mega_14.png
