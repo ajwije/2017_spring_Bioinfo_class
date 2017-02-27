@@ -105,7 +105,16 @@ Building Phylogenetic trees
     :C: Select prior parameters (e.g. equal, fixed frequencies for the states; equal probability for all topologies; unconstrained branch lengths).
     :D: Run 1,000,000 trials for Monte Carlo Markov Chain estimation of the posterior distribution.
     :E: Obtain phylogram.
-    :F: Export tree files and view with MEGA software.
+    :F: Export tree files 
+    
+|
+|
+.. figure:: img/mega_15.png    
+
+    :G: View in MEGA software.
+|
+|
+.. figure:: img/mega_14.png
 
 
 
