@@ -10,7 +10,7 @@
    :align: right
 
 *****************************
-Steps of building a tree
+Steps of building a tree (Part II)
 *****************************
 
 Make multiple sequence alignment for Globin gene family
