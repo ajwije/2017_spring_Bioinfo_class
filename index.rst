@@ -13,6 +13,7 @@ Welcome to Inclass Activities's documentation!
    MEGA_alignment.rst
    
    phylogenetics.rst
+   phylogenetics_2.rst
    
 
 

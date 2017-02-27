@@ -26,8 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Steps of building a tree" href="phylogenetics_2.html" />
-    <link rel="prev" title="Multiple Sequence Alignments" href="MEGA_alignment.html" /> 
+    <link rel="prev" title="Steps of building a tree" href="phylogenetics.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -37,10 +36,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="phylogenetics_2.html" title="Steps of building a tree"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="MEGA_alignment.html" title="Multiple Sequence Alignments"
+          <a href="phylogenetics.html" title="Steps of building a tree"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Inclass Activities 170218 documentation</a> &#187;</li> 
       </ul>
@@ -66,36 +62,85 @@
 </tr>
 <tr class="field-even field"><th class="field-name">Step 2:</th><td class="field-body">Examine the alignment to make sure it is correct and no additional editing is needed.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Step 2:</th><td class="field-body">Export the alignment as a fasta format file on your Desktop. Name it as globin_align</td>
+<tr class="field-odd field"><th class="field-name">Step 3:</th><td class="field-body">Export the alignment as a fasta format file on your Desktop. Name it as globin_align</td>
 </tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
-<div class="section" id="find-informative-sites-for-parsimony">
-<h2>Find informative sites for Parsimony<a class="headerlink" href="#find-informative-sites-for-parsimony" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="find-the-best-substitution-model">
+<h2>Find the best substitution model<a class="headerlink" href="#find-the-best-substitution-model" title="Permalink to this headline">¶</a></h2>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Step 1:</th><td class="field-body">Open the alignment file you just created by going to using <strong>Open file/Session</strong> under <strong>Data</strong></td>
+<tr class="field-odd field"><th class="field-name">Step 1:</th><td class="field-body"><p class="first">Calculate the distance using different substitution models
+:a: Select <strong>Distance</strong> and then <strong>Compute Pairwise distance</strong>
+:b: Calculate distance using the following methods</p>
+<blockquote class="last">
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">i:</th><td class="field-body">No. of Differences</td>
+</tr>
+<tr class="field-even field"><th class="field-name">ii:</th><td class="field-body">p-distances</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">iii:</th><td class="field-body">Poisson model</td>
 </tr>
 </tbody>
 </table>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <div class="figure">
-<img alt="_images/mega_8.png" src="_images/mega_8.png" />
+<img alt="_images/mega_13.png" src="_images/mega_13.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Step 2:</th><td class="field-body">Go to <strong>Explore Active Data</strong> under <strong>Data</strong></td>
+<tr class="field-odd field"><th class="field-name">Step 2:</th><td class="field-body"><p class="first">Use the same alignment file and build three NJ trees using different substitution models:</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">a:</th><td class="field-body">No. of Differences</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Step 3:</th><td class="field-body">Click on <strong>Pi</strong> button and this show site that are informative for Parsimony</td>
+<tr class="field-even field"><th class="field-name">b:</th><td class="field-body">p-distances</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">c:</th><td class="field-body">Poisson model</td>
 </tr>
 </tbody>
 </table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <div class="figure">
-<img alt="_images/mega_9.png" src="_images/mega_9.png" />
+<img alt="_images/mega_12.png" src="_images/mega_12.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 </div>
 <div class="section" id="building-phylogenetic-trees">
@@ -108,8 +153,14 @@
 </tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="figure">
 <img alt="_images/mega_10.png" src="_images/mega_10.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -132,17 +183,34 @@
 </tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 <div class="figure">
 <img alt="_images/mega_11.png" src="_images/mega_11.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Step 3:</th><td class="field-body"><p class="first">Save the tree as a pdf file by clicking on <strong>Image</strong> button</p>
-</td>
+<tr class="field-odd field"><th class="field-name">Step 3:</th><td class="field-body">Save the tree as a pdf file by clicking on <strong>Image</strong> button</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Step 4:</th><td class="field-body"><p class="first">Build a tree using Parsimony method with <strong>50 Bootstrap</strong> replicates (500 will be very slow).</p>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Step 4:</th><td class="field-body"><p class="first">Build a tree using Parsimony method with <strong>50 Bootstrap</strong> replicates (500 will be very slow).</p>
 <table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -159,6 +227,47 @@
 </tr>
 </tbody>
 </table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Step 5:</th><td class="field-body">Bayesian inference of phylogeny</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="http://www.phylogeny.fr/one_task.cgi?task_type=mrbayes">Follow this link to MrBayes online server</a></p>
+<blockquote>
+<div><blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">A:</th><td class="field-body">Use the same alignment file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">B:</th><td class="field-body">In MrBayes select Poisson amino acid model with equal rates of substitution.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">C:</th><td class="field-body">Select prior parameters (e.g. equal, fixed frequencies for the states; equal probability for all topologies; unconstrained branch lengths).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">D:</th><td class="field-body">Run 1,000,000 trials for Monte Carlo Markov Chain estimation of the posterior distribution.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">E:</th><td class="field-body">Obtain phylogram.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">F:</th><td class="field-body">Export tree files and view with MEGA software.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
 </div>
 </div>
 
@@ -172,22 +281,19 @@
   <ul>
 <li><a class="reference internal" href="#">Steps of building a tree</a><ul>
 <li><a class="reference internal" href="#make-multiple-sequence-alignment-for-globin-gene-family">Make multiple sequence alignment for Globin gene family</a></li>
-<li><a class="reference internal" href="#find-informative-sites-for-parsimony">Find informative sites for Parsimony</a></li>
+<li><a class="reference internal" href="#find-the-best-substitution-model">Find the best substitution model</a></li>
 <li><a class="reference internal" href="#building-phylogenetic-trees">Building Phylogenetic trees</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="MEGA_alignment.html"
-                        title="previous chapter">Multiple Sequence Alignments</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="phylogenetics_2.html"
-                        title="next chapter">Steps of building a tree</a></p>
+  <p class="topless"><a href="phylogenetics.html"
+                        title="previous chapter">Steps of building a tree</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/phylogenetics.rst.txt"
+      <li><a href="_sources/phylogenetics_2.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -212,10 +318,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="phylogenetics_2.html" title="Steps of building a tree"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="MEGA_alignment.html" title="Multiple Sequence Alignments"
+          <a href="phylogenetics.html" title="Steps of building a tree"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Inclass Activities 170218 documentation</a> &#187;</li> 
       </ul>
