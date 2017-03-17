@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FastQC analysis using Cyverse Discovery Environment (DE) &#8212; Inclass Activities 170218 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '170218',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Steps of building a tree (Part II)" href="phylogenetics_2.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="phylogenetics_2.html" title="Steps of building a tree (Part II)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Inclass Activities 170218 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="fastqc-analysis-using-cyverse-discovery-environment-de">
+<h1>FastQC analysis using Cyverse Discovery Environment (DE)<a class="headerlink" href="#fastqc-analysis-using-cyverse-discovery-environment-de" title="Permalink to this headline">¶</a></h1>
+<p>Data we are using for this analysis came from Loraine et al, 2015 study. In the original study,
+there are 10 samples (Five Controls and heat treated). Here we are using only 3 samples for each
+group (3 control and 3 heat treated). These files were downloaded from NCBI&#8217;s Short Read Archive (SRA)
+using SRA <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc">toolkit</a>.</p>
+<p>First step of the data analysis is to check the quality of the sequences. For this purpose,
+we are using the <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> tool on Cyverse DE.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Step 1:</th><td class="field-body"><strong>Login into Cyverse DE</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img alt="_images/iplant_1.png" src="_images/iplant_1.png" />
+</div>
+<p>Then, go to your DE account.</p>
+<div class="figure">
+<img alt="_images/iplant2.png" src="_images/iplant2.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Step 2:</th><td class="field-body"><strong>Getting data into Cyverse Discovery Environment</strong></td>
+</tr>
+</tbody>
+</table>
+<ol class="loweralpha">
+<li><p class="first">Click on &#8220;Data&#8221; button</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_1.png" src="_images/fastqc_1.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha" start="2">
+<li><p class="first">Click on &#8220;File&#8221; and then &#8220;New Folder&#8221;</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_2.png" src="_images/fastqc_2.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>:c. Create a folder called &#8220;Data&#8221; and click &#8220;OK&#8221;. Create another folder called &#8220;Analysis&#8221;.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_4.png" src="_images/fastqc_4.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha" start="4">
+<li><p class="first">Click on the &#8220;Data&#8221; folder to enter into it. Click on &#8220;Upload&#8221; and then &#8220;Import from URL&#8221;</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_5.png" src="_images/fastqc_5.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha" start="5">
+<li><p class="first">I have create public links for fastq files. Copy and paste URLs in the box (one for each box).</p>
+<blockquote>
+<div><p><strong>You will need to do this for all 12 URLs.</strong> Then click on &#8220;Import from URL&#8221;</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_6.png" src="_images/fastqc_6.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>URLs</strong></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/5B50EFE6-D0BA-4833-980E-E81E5B63C15E/Control1_1.fastq">http://de.cyverse.org/dl/d/5B50EFE6-D0BA-4833-980E-E81E5B63C15E/Control1_1.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/BBFB60AC-8855-40AC-9634-7C62F5B9B02D/Control1_2.fastq">http://de.cyverse.org/dl/d/BBFB60AC-8855-40AC-9634-7C62F5B9B02D/Control1_2.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/2AB5824F-73BA-4C6B-8530-457609F632BA/Control2_1.fastq">http://de.cyverse.org/dl/d/2AB5824F-73BA-4C6B-8530-457609F632BA/Control2_1.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/46E690E4-C4A0-495F-9B11-F12AD9A25EE3/Control2_2.fastq">http://de.cyverse.org/dl/d/46E690E4-C4A0-495F-9B11-F12AD9A25EE3/Control2_2.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/7FEE6359-24AE-478D-A0B1-C6D2CA09E45E/Control3_1.fastq">http://de.cyverse.org/dl/d/7FEE6359-24AE-478D-A0B1-C6D2CA09E45E/Control3_1.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/8FBB264D-F0CA-4F2C-821A-DB1C709315B2/Control3_2.fastq">http://de.cyverse.org/dl/d/8FBB264D-F0CA-4F2C-821A-DB1C709315B2/Control3_2.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/E7AD135C-F2BC-445C-BBC2-695B1D76B010/Heat1_1.fastq">http://de.cyverse.org/dl/d/E7AD135C-F2BC-445C-BBC2-695B1D76B010/Heat1_1.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/46093383-493A-4D4E-A607-D3E56916DF59/Heat1_2.fastq">http://de.cyverse.org/dl/d/46093383-493A-4D4E-A607-D3E56916DF59/Heat1_2.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/9668B243-7009-4AD3-BBDA-350D6A60119D/Heat2_1.fastq">http://de.cyverse.org/dl/d/9668B243-7009-4AD3-BBDA-350D6A60119D/Heat2_1.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/FE1C3CC3-9133-4244-BCBB-816B8D2D5F97/Heat2_2.fastq">http://de.cyverse.org/dl/d/FE1C3CC3-9133-4244-BCBB-816B8D2D5F97/Heat2_2.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/D635B6EE-BE26-4BC4-A058-3E51B1AA69C4/Heat3_1.fastq">http://de.cyverse.org/dl/d/D635B6EE-BE26-4BC4-A058-3E51B1AA69C4/Heat3_1.fastq</a></p>
+<p><a class="reference external" href="http://de.cyverse.org/dl/d/F88561AF-CFF2-4FC8-B6B4-D8623779BB24/Heat3_2.fastq">http://de.cyverse.org/dl/d/F88561AF-CFF2-4FC8-B6B4-D8623779BB24/Heat3_2.fastq</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Step 3:</th><td class="field-body"><strong>Performing FastQC analysis</strong>:</td>
+</tr>
+</tbody>
+</table>
+<ol class="loweralpha">
+<li><p class="first">Click on &#8220;Apps&#8221; button.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_9.png" src="_images/fastqc_9.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Type &#8220;fastqc&#8221; in the search window and select app shown in red arrow.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_10.png" src="_images/fastqc_10.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha" start="3">
+<li><dl class="first docutils">
+<dt>Follow the direction as in the figure to select the folder where results will be saved.</dt>
+<dd><p class="first">Then, click on the small downward arrow (black circle).</p>
+<div class="last figure">
+<img alt="_images/fastqc_11.png" src="_images/fastqc_11.png" />
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Click &#8220;+&#8221; sign to select fastq files.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/fastqc_12.png" src="_images/fastqc_12.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha" start="5">
+<li><dl class="first docutils">
+<dt>Go to the folder where you have your fastq files and select them as indicated in the</dt>
+<dd><p class="first">figure below. Then launch the analysis. Once the analysis is complete, you will be notified
+via email.</p>
+<div class="last figure">
+<img alt="_images/fastqc_13.png" src="_images/fastqc_13.png" />
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="reference">
+<h2>Reference:<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p><strong>Loraine AE</strong>, Blakley IC, Jagadeesan S, Harper J, Miller G, Firon N.
+Analysis and Visualization of RNA-Seq Expression Data Using RStudio, Bioconductor,
+and Integrated Genome Browser.
+<em>Methods Mol Biol.</em> 2015;1284:481-501. doi: 10.1007/978-1-4939-2444-8_24.
+PubMed PMID: 25757788.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">FastQC analysis using Cyverse Discovery Environment (DE)</a><ul>
+<li><a class="reference internal" href="#reference">Reference:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="phylogenetics_2.html"
+                        title="previous chapter">Steps of building a tree (Part II)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/fastQC.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="phylogenetics_2.html" title="Steps of building a tree (Part II)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Inclass Activities 170218 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Asela Wijeratne.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

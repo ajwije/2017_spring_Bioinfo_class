@@ -14,6 +14,7 @@ Welcome to Inclass Activities's documentation!
    
    phylogenetics.rst
    phylogenetics_2.rst
+   fastQC.rst
    
 
 

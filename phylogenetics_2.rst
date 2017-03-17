@@ -9,9 +9,9 @@
 .. figure:: img/UnivLogo_Stack_2C_Dark.png
    :align: right
 
-***********************************
+****************************************************
 Steps of building a tree (Part II)
-************************************
+****************************************************
 
 Make multiple sequence alignment for Globin gene family
 ----------------------------------------------------------
