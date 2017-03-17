@@ -11,7 +11,6 @@ Welcome to Inclass Activities's documentation!
    :caption: Contents:
    
    MEGA_alignment.rst
-   
    phylogenetics.rst
    phylogenetics_2.rst
    fastQC.rst
