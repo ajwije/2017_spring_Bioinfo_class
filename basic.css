@@ -275,7 +275,7 @@ span.problematic {
 
 span.section-subtitle {
   /* font-size relative to parent (h1..h6 element) */
-  font-size: 80% }
+  font-size: 100% }
 
 table.citation {
   border-left: solid 1px gray;

@@ -1,51 +1,171 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>FastQC analysis using Cyverse Discovery Environment (DE) &#8212; Inclass Activities 170218 documentation</title>
-    
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '170218',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Steps of building a tree (Part II)" href="phylogenetics_2.html" /> 
-  </head>
-  <body role="document">
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="phylogenetics_2.html" title="Steps of building a tree (Part II)"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Inclass Activities 170218 documentation</a> &#187;</li> 
-      </ul>
-    </div>  
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FastQC analysis using Cyverse Discovery Environment (DE) &mdash; Inclass Activities 170218 documentation</title>
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="prev" title="Steps of building a tree (Part II)" href="phylogenetics_2.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Inclass Activities
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="MEGA_alignment.html">Multiple Sequence Alignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics.html">Steps of building a tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics_2.html">Steps of building a tree (Part II)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FastQC analysis using Cyverse Discovery Environment (DE)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-login-into-cyverse-de">Step 1: <strong>Login into Cyverse DE</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-getting-data-into-cyverse-discovery-environment">Step 2: <strong>Getting data into Cyverse Discovery Environment</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#urls"><strong>URLs</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-performing-fastqc-analysis">Step 3: <strong>Performing FastQC analysis</strong>:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference:</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inclass Activities</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>FastQC analysis using Cyverse Discovery Environment (DE)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/fastQC.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="figure align-right">
 <img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
@@ -58,14 +178,9 @@ group (3 control and 3 heat treated). These files were downloaded from NCBI&#821
 using SRA <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc">toolkit</a>.</p>
 <p>First step of the data analysis is to check the quality of the sequences. For this purpose,
 we are using the <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> tool on Cyverse DE.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Step 1:</th><td class="field-body"><strong>Login into Cyverse DE</strong></td>
-</tr>
-</tbody>
-</table>
+<div class="section" id="step-1-login-into-cyverse-de">
+<h2>Step 1: <strong>Login into Cyverse DE</strong><a class="headerlink" href="#step-1-login-into-cyverse-de" title="Permalink to this headline">¶</a></h2>
+<p>First login to your Cyverse account using your name and password.</p>
 <div class="figure">
 <img alt="_images/iplant_1.png" src="_images/iplant_1.png" />
 </div>
@@ -77,14 +192,12 @@ we are using the <a class="reference external" href="http://www.bioinformatics.b
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Step 2:</th><td class="field-body"><strong>Getting data into Cyverse Discovery Environment</strong></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="section" id="step-2-getting-data-into-cyverse-discovery-environment">
+<h2>Step 2: <strong>Getting data into Cyverse Discovery Environment</strong><a class="headerlink" href="#step-2-getting-data-into-cyverse-discovery-environment" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <ol class="loweralpha">
 <li><p class="first">Click on &#8220;Data&#8221; button</p>
 <blockquote>
@@ -130,12 +243,8 @@ we are using the <a class="reference external" href="http://www.bioinformatics.b
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<ol class="loweralpha" start="5">
-<li><p class="first">I have create public links for fastq files. Copy and paste URLs in the box (one for each box).</p>
-<blockquote>
-<div><p><strong>You will need to do this for all 12 URLs.</strong> Then click on &#8220;Import from URL&#8221;</p>
-</div></blockquote>
-</li>
+<ol class="loweralpha simple" start="5">
+<li>I have create public links for fastq files. Copy and paste URLs in the box (one for each box). <strong>You will need to do this for all 12 URLs.</strong> Then click on &#8220;Import from URL&#8221;</li>
 </ol>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -148,7 +257,8 @@ we are using the <a class="reference external" href="http://www.bioinformatics.b
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><strong>URLs</strong></p>
+<div class="section" id="urls">
+<h3><strong>URLs</strong><a class="headerlink" href="#urls" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://de.cyverse.org/dl/d/5B50EFE6-D0BA-4833-980E-E81E5B63C15E/Control1_1.fastq">http://de.cyverse.org/dl/d/5B50EFE6-D0BA-4833-980E-E81E5B63C15E/Control1_1.fastq</a></p>
 <p><a class="reference external" href="http://de.cyverse.org/dl/d/BBFB60AC-8855-40AC-9634-7C62F5B9B02D/Control1_2.fastq">http://de.cyverse.org/dl/d/BBFB60AC-8855-40AC-9634-7C62F5B9B02D/Control1_2.fastq</a></p>
 <p><a class="reference external" href="http://de.cyverse.org/dl/d/2AB5824F-73BA-4C6B-8530-457609F632BA/Control2_1.fastq">http://de.cyverse.org/dl/d/2AB5824F-73BA-4C6B-8530-457609F632BA/Control2_1.fastq</a></p>
@@ -161,14 +271,13 @@ we are using the <a class="reference external" href="http://www.bioinformatics.b
 <p><a class="reference external" href="http://de.cyverse.org/dl/d/FE1C3CC3-9133-4244-BCBB-816B8D2D5F97/Heat2_2.fastq">http://de.cyverse.org/dl/d/FE1C3CC3-9133-4244-BCBB-816B8D2D5F97/Heat2_2.fastq</a></p>
 <p><a class="reference external" href="http://de.cyverse.org/dl/d/D635B6EE-BE26-4BC4-A058-3E51B1AA69C4/Heat3_1.fastq">http://de.cyverse.org/dl/d/D635B6EE-BE26-4BC4-A058-3E51B1AA69C4/Heat3_1.fastq</a></p>
 <p><a class="reference external" href="http://de.cyverse.org/dl/d/F88561AF-CFF2-4FC8-B6B4-D8623779BB24/Heat3_2.fastq">http://de.cyverse.org/dl/d/F88561AF-CFF2-4FC8-B6B4-D8623779BB24/Heat3_2.fastq</a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Step 3:</th><td class="field-body"><strong>Performing FastQC analysis</strong>:</td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+<div class="section" id="step-3-performing-fastqc-analysis">
+<h2>Step 3: <strong>Performing FastQC analysis</strong>:<a class="headerlink" href="#step-3-performing-fastqc-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <ol class="loweralpha">
 <li><p class="first">Click on &#8220;Apps&#8221; button.</p>
 <blockquote>
@@ -177,7 +286,7 @@ we are using the <a class="reference external" href="http://www.bioinformatics.b
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Type &#8220;fastqc&#8221; in the search window and select app shown in red arrow.</p>
+<li><p class="first">Type &#8220;fastqc&#8221; in the search window and select the app shown in red arrow.</p>
 <blockquote>
 <div><div class="figure">
 <img alt="_images/fastqc_10.png" src="_images/fastqc_10.png" />
@@ -190,7 +299,7 @@ we are using the <a class="reference external" href="http://www.bioinformatics.b
 </div>
 <ol class="loweralpha" start="3">
 <li><dl class="first docutils">
-<dt>Follow the direction as in the figure to select the folder where results will be saved.</dt>
+<dt>Follow the direction as in the figure to select the folder where your results will be saved.</dt>
 <dd><p class="first">Then, click on the small downward arrow (black circle).</p>
 <div class="last figure">
 <img alt="_images/fastqc_11.png" src="_images/fastqc_11.png" />
@@ -198,7 +307,7 @@ we are using the <a class="reference external" href="http://www.bioinformatics.b
 </dd>
 </dl>
 </li>
-<li><p class="first">Click &#8220;+&#8221; sign to select fastq files.</p>
+<li><p class="first">Click on &#8220;+&#8221; sign to select the fastq files.</p>
 <blockquote>
 <div><div class="figure">
 <img alt="_images/fastqc_12.png" src="_images/fastqc_12.png" />
@@ -225,6 +334,7 @@ via email.</p>
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
+</div>
 <div class="section" id="reference">
 <h2>Reference:<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <p><strong>Loraine AE</strong>, Blakley IC, Jagadeesan S, Harper J, Miller G, Firon N.
@@ -236,58 +346,73 @@ PubMed PMID: 25757788.</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">FastQC analysis using Cyverse Discovery Environment (DE)</a><ul>
-<li><a class="reference internal" href="#reference">Reference:</a></li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="phylogenetics_2.html" class="btn btn-neutral" title="Steps of building a tree (Part II)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="phylogenetics_2.html"
-                        title="previous chapter">Steps of building a tree (Part II)</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/fastQC.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Asela Wijeratne.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="phylogenetics_2.html" title="Steps of building a tree (Part II)"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Inclass Activities 170218 documentation</a> &#187;</li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Asela Wijeratne.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'170218',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

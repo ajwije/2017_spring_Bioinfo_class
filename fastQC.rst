@@ -1,8 +1,7 @@
+.. module:: FastQC analysis using Cyverse Discovery Environment
 
-
-
-.. module:: FastQC analysis using Cyverse Discovery Environment 
-   :synopsis:    
+   :synopsis:
+       
 .. moduleauthor:: Asela Wijeratne<awijeratne@astate.edu>
 
 .. index::
@@ -25,7 +24,7 @@ First step of the data analysis is to check the quality of the sequences. For th
 we are using the `FastQC <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_ tool on Cyverse DE. 
 
 
-:Step 1: **Login into Cyverse DE**
+Step 1: **Login into Cyverse DE**
 ------------------------------------------
 First login to your Cyverse account using your name and password. 
 
@@ -42,7 +41,7 @@ Then, go to your DE account.
 |
 
 
-:Step 2: **Getting data into Cyverse Discovery Environment**
+Step 2: **Getting data into Cyverse Discovery Environment**
 ----------------------------------------------------------------
 |
 a. Click on "Data" button
@@ -72,9 +71,7 @@ d. Click on the "Data" folder to enter into it. Click on "Upload" and then "Impo
 	.. figure:: img/fastqc_5.png
 	
 |	
-e. I have create public links for fastq files. Copy and paste URLs in the box (one for each box).
-
-	**You will need to do this for all 12 URLs.** Then click on "Import from URL"
+e. I have create public links for fastq files. Copy and paste URLs in the box (one for each box). **You will need to do this for all 12 URLs.** Then click on "Import from URL"
 	
 |
 
@@ -82,6 +79,7 @@ e. I have create public links for fastq files. Copy and paste URLs in the box (o
 
 |
 **URLs**
+**************************
 
 http://de.cyverse.org/dl/d/5B50EFE6-D0BA-4833-980E-E81E5B63C15E/Control1_1.fastq
 
@@ -108,7 +106,7 @@ http://de.cyverse.org/dl/d/D635B6EE-BE26-4BC4-A058-3E51B1AA69C4/Heat3_1.fastq
 http://de.cyverse.org/dl/d/F88561AF-CFF2-4FC8-B6B4-D8623779BB24/Heat3_2.fastq
 
 	
-:Step 3: **Performing FastQC analysis**:	
+Step 3: **Performing FastQC analysis**:	
 -------------------------------------------
 |
 
@@ -116,18 +114,18 @@ a. Click on "Apps" button.
 
 	.. figure:: img/fastqc_9.png
 
-b. Type "fastqc" in the search window and select app shown in red arrow.
+b. Type "fastqc" in the search window and select the app shown in red arrow.
 
 	.. figure:: img/fastqc_10.png
 	
 |
 	
-c. Follow the direction as in the figure to select the folder where results will be saved.
+c. Follow the direction as in the figure to select the folder where your results will be saved.
 	Then, click on the small downward arrow (black circle).
 	
 	.. figure:: img/fastqc_11.png
 
-d. Click "+" sign to select fastq files.
+d. Click on "+" sign to select the fastq files.
 
 	.. figure:: img/fastqc_12.png
 
@@ -139,6 +137,7 @@ e. Go to the folder where you have your fastq files and select them as indicated
 	via email. 
 
 	.. figure:: img/fastqc_13.png
+
 |
 |
 	
