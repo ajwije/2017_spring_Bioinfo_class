@@ -59,7 +59,7 @@ b. Click on "File" and then "New Folder"
 
 |
 
-:c. Create a folder called "Data" and click "OK". Create another folder called "Analysis". 
+c. Create a folder called "Data" and click "OK". **Create another folder called "Analysis".** 
 
 	.. figure:: img/fastqc_4.png
 	
