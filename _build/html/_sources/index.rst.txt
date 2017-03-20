@@ -3,16 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Inclass Activities's documentation!
-==============================================
+BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
+====================================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 100
+   :caption: Bioinformatics part I
    
    MEGA_alignment.rst
    phylogenetics.rst
    phylogenetics_2.rst
+
+.. toctree::
+   :maxdepth: 100
+   :caption: High-throughput data analysis
+   
    fastQC.rst
    
 

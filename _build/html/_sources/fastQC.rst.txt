@@ -30,7 +30,7 @@ First login to your Cyverse account using your name and password.
 
 .. figure:: img/iplant_1.png
 
-
+|
 Then, go to your DE account.
 
 
@@ -38,7 +38,7 @@ Then, go to your DE account.
 
 
 |
-|
+
 
 
 Step 2: **Getting data into Cyverse Discovery Environment**
