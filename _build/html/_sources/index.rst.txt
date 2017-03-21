@@ -7,6 +7,7 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
 ====================================================
 
 .. toctree::
+   :numbered:
    :maxdepth: 100
    :caption: Bioinformatics part I
    
