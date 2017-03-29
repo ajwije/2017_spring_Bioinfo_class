@@ -31,7 +31,7 @@ Step 1: **Click on the message icon**
 Step 2: **Click on the analysis that appears to be stalled**
 ----------------------------------------------------------------
 	
-	.. figure:: img/restart_2.png
+	.. figure:: img/restart_3.png
 	
 
 |
