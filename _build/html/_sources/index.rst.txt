@@ -20,6 +20,7 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    :caption: High-throughput data analysis
    
    fastQC.rst
+   relaunch.rst
    
 
 
