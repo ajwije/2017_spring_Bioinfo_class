@@ -21,6 +21,7 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    
    fastQC.rst
    relaunch.rst
+   adapter_trimming.rst
    
 
 
