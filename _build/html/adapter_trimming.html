@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Adapter trimming using Scythe &mdash; Inclass Activities 170218 documentation</title>
+  <title>Adapter and quality trimming using trim-galore &mdash; Inclass Activities 170218 documentation</title>
   
 
   
@@ -99,7 +99,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="fastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relaunch.html">Relaunching a stalled analysis in Cyverse Discovery Environment</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Adapter trimming using Scythe</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adapter and quality trimming using trim-galore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-launching-trim-galore">Step 1: <strong>Launching Trim-galore</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-selecting-output-folder">Step 2: <strong>Selecting output folder</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-selecting-input-files">Step 3: <strong>Selecting input files</strong></a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -144,7 +149,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Adapter trimming using Scythe</li>
+      <li>Adapter and quality trimming using trim-galore</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -166,17 +171,199 @@
   <div class="figure align-right">
 <img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
 </div>
-<div class="section" id="adapter-trimming-using-scythe">
-<h1>Adapter trimming using Scythe<a class="headerlink" href="#adapter-trimming-using-scythe" title="Permalink to this headline">¶</a></h1>
-<p>This needs to be completed.</p>
-<p>Two files:</p>
-<p><a class="reference external" href="http://de.cyverse.org/dl/d/6A8AE7C8-EBE7-45DE-A136-A93774E88235/sample_R1.fq">http://de.cyverse.org/dl/d/6A8AE7C8-EBE7-45DE-A136-A93774E88235/sample_R1.fq</a></p>
+<div class="section" id="adapter-and-quality-trimming-using-trim-galore">
+<h1>Adapter and quality trimming using trim-galore<a class="headerlink" href="#adapter-and-quality-trimming-using-trim-galore" title="Permalink to this headline">¶</a></h1>
+<p>We are going to use Trim-galore to trim adapters, and poor quality bases. This tool has several advantages. It allows selection
+multiple files. You can also select both forward and reverse reads. If you want to read more about Trim-galore,
+please visit their <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">website</a>.
+Also, Trim-galore is a wrapper for <a class="reference external" href="http://cutadapt.readthedocs.io/en/stable/guide.html#three-prime-adapters">Cutadapt</a> ,
+which is the actual tool that performs the trimming.</p>
+<p><em>Please follow the tutorial carefully.</em></p>
+<div class="section" id="step-1-launching-trim-galore">
+<h2>Step 1: <strong>Launching Trim-galore</strong><a class="headerlink" href="#step-1-launching-trim-galore" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click on <em>App</em>.</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><a class="reference external" href="http://de.cyverse.org/dl/d/3EC3F787-2E79-43D8-86CD-1B9A2C26ED9D/sample_R2.fq">http://de.cyverse.org/dl/d/3EC3F787-2E79-43D8-86CD-1B9A2C26ED9D/sample_R2.fq</a></p>
-<p>Adapter file:</p>
-<p><a class="reference external" href="http://de.cyverse.org/dl/d/A46A6400-E020-4C1C-8789-594AFBE455F8/TruSeq2-PE.fa">http://de.cyverse.org/dl/d/A46A6400-E020-4C1C-8789-594AFBE455F8/TruSeq2-PE.fa</a></p>
+<ol class="arabic simple" start="2">
+<li>In the finder window type &#8220;trim-galore&#8221;</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Select &#8220;trim-galore-0.4.1&#8221;.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_1.png" src="_images/trim_1.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-2-selecting-output-folder">
+<h2>Step 2: <strong>Selecting output folder</strong><a class="headerlink" href="#step-2-selecting-output-folder" title="Permalink to this headline">¶</a></h2>
+<p>As indicated in the figure:
+1. Name your analysis as you want</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Select the output folder where your analysis is going to be</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Click on &#8220;Paired end Input fastq files&#8221;</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_2.png" src="_images/trim_2.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-3-selecting-input-files">
+<h2>Step 3: <strong>Selecting input files</strong><a class="headerlink" href="#step-3-selecting-input-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click on the Green &#8220;+&#8221; sign.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_3.png" src="_images/trim_3.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>2. Navigate to the folder where your samples are located. Select only the <strong>first read files</strong>.
+Click &#8220;OK&#8221;.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_4.png" src="_images/trim_4.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">You should all your first read files selected like this.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_5.png" src="_images/trim_5.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="4">
+<li><p class="first">Scroll down and click on the &#8220;+&#8221; below &#8220;Fastq file(s) (Read 2 of paired end reads):&#8221;</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_6.png" src="_images/trim_6.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p class="first">Select the read two files as above. You will see them in the box as in the figure below.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_7.png" src="_images/trim_7.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>6. Scroll down and check box beside &#8220;Paired (Select this option for paired-end files)&#8221; to
+indicate these are paired end reads.</p>
+<p><strong>very important</strong></p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_8.png" src="_images/trim_8.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Click on &#8220;Parameters&#8221; as indicated in the above figure.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="8">
+<li>Set the parameters as indicated in the figure:</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha simple">
+<li>Use Fred 20 as quality trimming cut off (this is the default).</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha simple" start="2">
+<li>Copy and paste the following adapter sequence for in the box below &#8220;Adapter sequence to be trimmed:&#8221;</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div>AATGATACGGCGA</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha simple" start="3">
+<li>Copy and paste the following adapter sequence for in the box below &#8220;Adapter2&#8221;</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div>CAAGCAGAAGACGG</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="loweralpha" start="4">
+<li><p class="first">Set the stringency to 6.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_9.png" src="_images/trim_9.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>e. Scroll down and set the length as 40. Any sequence become shorter than this length during the trimming will be discarded.
+|
+f. Launch the analysis.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_10.png" src="_images/trim_10.png" />
+</div>
+</div></blockquote>
+</div>
 </div>
 
 
