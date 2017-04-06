@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mapping short reads &mdash; Inclass Activities 170218 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="prev" title="Adapter and quality trimming using trim-galore" href="adapter_trimming.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Inclass Activities
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Bioinformatics part I</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="MEGA_alignment.html">1. Multiple Sequence Alignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics.html">2. Steps of building a tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics_2.html">3. Steps of building a tree (Part II)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">High-throughput data analysis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="fastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relaunch.html">Relaunching a stalled analysis in Cyverse Discovery Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mapping short reads</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-mapping-with-tophat2">Step 1: <strong>Mapping with Tophat2</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-mapping-with-bowtie2">Step 2: <strong>Mapping with Bowtie2</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inclass Activities</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Mapping short reads</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mapping.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="mapping-short-reads">
+<h1>Mapping short reads<a class="headerlink" href="#mapping-short-reads" title="Permalink to this headline">¶</a></h1>
+<p>If you are using genome as the reference for RNAseq reads, you will need to use a splice-aware aligner like Tophat2.
+If you are using cDNA as the reference, you can use a general purpose aligner like Bowtie2.</p>
+<p><em>You need to do only one of the procedures based on what your group have been assigned to.</em></p>
+<div class="section" id="step-1-mapping-with-tophat2">
+<h2>Step 1: <strong>Mapping with Tophat2</strong><a class="headerlink" href="#step-1-mapping-with-tophat2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click on <em>App</em>.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>In the finder window type &#8220;Tophat&#8221;</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Select &#8220;Tophat2-PE&#8221;.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/tophat_1.png" src="_images/tophat_1.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>As indicated in the figure, Name your analysis as you want.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Select the output folder where your analysis is going to be.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="6">
+<li><p class="first">Click on &#8220;Input data&#8221;</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/tophat_2.png" src="_images/tophat_2.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Click on the Green &#8220;+&#8221; sign.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>8. Navigate to the folder where your samples are located. Select only the <strong>first read files</strong>.
+Click &#8220;OK&#8221;.  <strong>You can select all three of your first read files.</strong></p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/tophat_3.png" src="_images/tophat_3.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="9">
+<li>Scroll down and click on the &#8220;+&#8221; below &#8220;Fastq file(s) (Read 2 of paired end reads):&#8221;</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p class="first">Select &#8220;Reference Genome&#8221; and select the tomato genome sequence as input.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/tophat_4.png" src="_images/tophat_4.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p class="first">Make sure quality is Sanger and leave rest of the default values as they are. Launch the analysis.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/tophat_5.png" src="_images/tophat_5.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-2-mapping-with-bowtie2">
+<h2>Step 2: <strong>Mapping with Bowtie2</strong><a class="headerlink" href="#step-2-mapping-with-bowtie2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click on <em>App</em>.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>In the finder window type &#8220;Bowtie&#8221;.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Select Bowtie app indicated in the figure.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/bowtie_1.png" src="_images/bowtie_1.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>As indicated in the figure, Name your analysis as you want.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p class="first">Select the output folder where your analysis is going to be.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/bowtie_2.png" src="_images/bowtie_2.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>Click on &#8220;Input&#8221;</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>8. Navigate to the folder where your samples are located. Select first and second read files.
+You can only input one sample at a time.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="9">
+<li><p class="first">You need to name your output file carefully. For e.g., if it is heat1 sample, name the output as heat1.sam.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/bowtie_4.png" src="_images/bowtie_4.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="10">
+<li><p class="first">Select &#8220;Reference Index&#8221; and select the tomato cDNA sequence as input.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="img/bowtie_3.png" src="img/bowtie_3.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="11">
+<li><p class="first">Select options. Set &#8220;Minimum fragment length&#8221; as 100 and &#8220;Maximum fragment length&#8221; as 600. Launch the analysis.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/bowtie_5.png" src="_images/bowtie_5.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="adapter_trimming.html" class="btn btn-neutral" title="Adapter and quality trimming using trim-galore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Asela Wijeratne.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'170218',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
