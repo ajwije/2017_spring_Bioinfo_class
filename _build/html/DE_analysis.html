@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; Inclass Activities 170218 documentation</title>
+  <title>Differential gene expression analysis &mdash; Inclass Activities 170218 documentation</title>
   
 
   
@@ -34,8 +34,9 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="#"/>
-    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/> 
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="prev" title="Mapping short reads" href="mapping.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -71,7 +72,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -95,12 +96,16 @@
 <li class="toctree-l1"><a class="reference internal" href="phylogenetics_2.html">3. Steps of building a tree (Part II)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">High-throughput data analysis</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="fastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relaunch.html">Relaunching a stalled analysis in Cyverse Discovery Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping short reads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DE_analysis.html">Differential gene expression analysis</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Differential gene expression analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deseq-tutorial">DESeq tutorial:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edger-tutorial">EdgeR tutorial:</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -145,10 +150,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Differential gene expression analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/DE_analysis.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -160,19 +169,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="differential-gene-expression-analysis">
+<h1>Differential gene expression analysis<a class="headerlink" href="#differential-gene-expression-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Link for  Bowtie mapped counts <a class="reference external" href="http://de.cyverse.org/dl/d/FDB1BFD9-2B6D-480D-95C8-8CC547929E88/170407_bowtie_counts.txt">http://de.cyverse.org/dl/d/FDB1BFD9-2B6D-480D-95C8-8CC547929E88/170407_bowtie_counts.txt</a></p>
+<p>Target file for bowtie mapped reads: <a class="reference external" href="http://de.cyverse.org/dl/d/BECB62C3-A369-4084-9BC9-2BFD9E6E9600/bowtie_target.txt">http://de.cyverse.org/dl/d/BECB62C3-A369-4084-9BC9-2BFD9E6E9600/bowtie_target.txt</a></p>
+<p>Link for  Tophat mapped counts: <a class="reference external" href="http://de.cyverse.org/dl/d/3C9B0A04-92E5-4749-ACFB-402BCC60DB54/tophat_counts.txt">http://de.cyverse.org/dl/d/3C9B0A04-92E5-4749-ACFB-402BCC60DB54/tophat_counts.txt</a></p>
+<p>Target file for bowtie mapped reads: <a class="reference external" href="http://de.cyverse.org/dl/d/BFD22065-1E6D-47BE-9023-309152DED2D1/tophat_target.txt">http://de.cyverse.org/dl/d/BFD22065-1E6D-47BE-9023-309152DED2D1/tophat_target.txt</a></p>
+<div class="section" id="deseq-tutorial">
+<h2>DESeq tutorial:<a class="headerlink" href="#deseq-tutorial" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pods.iplantcollaborative.org/wiki/display/DEapps/DESeq">Tutorial link</a></p>
+</div>
+<div class="section" id="edger-tutorial">
+<h2>EdgeR tutorial:<a class="headerlink" href="#edger-tutorial" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pods.iplantcollaborative.org/wiki/display/DEapps/edgeR+(multifactorial+pairwise+comparisons)+in+DE">Tutorial link</a></p>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            <div class="articleComments">
@@ -180,6 +195,13 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="mapping.html" class="btn btn-neutral" title="Mapping short reads" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -218,7 +240,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -234,14 +255,7 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

@@ -23,7 +23,7 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    relaunch.rst
    adapter_trimming.rst
    mapping.rst
-   
+   DE_analysis.rst
 
 
 
