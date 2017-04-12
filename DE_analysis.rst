@@ -50,6 +50,8 @@ Steps to perform DEseq analysis
 4. Give a name to the project. Reference biological condition should be "control" samples. Variable of 
 interest is "group" (Column header of the third column of the target file). 
 
+	.. figure:: img/DEseq_4.png
+
 |
 5. Set the significant threshold to 0.05 and launch the analysis. 
 
