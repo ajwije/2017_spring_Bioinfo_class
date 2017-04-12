@@ -104,6 +104,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Differential gene expression analysis</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#deseq-tutorial">DESeq tutorial:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#steps-to-perform-deseq-analysis">Steps to perform DEseq analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#de-gene-list">DE gene list</a></li>
 </ul>
 </li>
 </ul>
@@ -237,6 +238,41 @@ interest is &#8220;group&#8221; (Column header of the third column of the target
 </div></blockquote>
 </li>
 </ol>
+</div>
+<div class="section" id="de-gene-list">
+<h2>DE gene list<a class="headerlink" href="#de-gene-list" title="Permalink to this headline">¶</a></h2>
+<p>I have used the following R code to merge the DE genes list and the functions.</p>
+<div class="highlight-R"><div class="highlight"><pre><span></span><span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>readr<span class="p">)</span>
+
+<span class="c1"># Used the terminal command to grep the fasta headers and wrote it to a file called &quot;ITAG3_10_cDN_names.txt&quot;</span>
+<span class="c1">#imported this file to Rstudio</span>
+
+<span class="c1"># Removed the &quot;&gt;&quot; sign</span>
+ITAG3_10_formated_names <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">sapply</span><span class="p">(</span>ITAG3_10_cDN_names<span class="p">,</span> <span class="kp">gsub</span><span class="p">,</span> pattern <span class="o">=</span> <span class="s">&quot;&gt;&quot;</span><span class="p">,</span> replacement <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="p">))</span>
+
+<span class="c1">#Seperate gene ids and description using space as delimiter</span>
+ITAG3_10_formated_names <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>colsplit<span class="p">(</span>ITAG3_10_formated_names<span class="o">$</span>X1<span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Id&quot;</span><span class="p">,</span> <span class="s">&quot;Description&quot;</span><span class="p">)))</span>
+
+<span class="c1">#imported up regulated genes to Rstudio and merge with the above file using gene ids.</span>
+heatvscontrol_up_func <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>heatvscontrol_up<span class="p">,</span> ITAG3_10_formated_names<span class="p">,</span>
+                       by.x <span class="o">=</span> <span class="s">&quot;Id&quot;</span><span class="p">,</span>
+                       by.y <span class="o">=</span> <span class="s">&quot;Id&quot;</span><span class="p">)</span>
+
+<span class="c1">#write output</span>
+write.table<span class="p">(</span>x <span class="o">=</span> heatvscontrol_up_func<span class="p">,</span> file <span class="o">=</span> <span class="s">&quot;heatvscontrol_up_func.txt&quot;</span><span class="p">,</span> quote <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> row.names <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+
+<span class="c1">#imported down regulated genes to Rstudio and merge with the above file using gene ids</span>
+heatvscontrol_down_func <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>heatvscontrol_down<span class="p">,</span> ITAG3_10_formated_names<span class="p">,</span>
+                       by.x <span class="o">=</span> <span class="s">&quot;Id&quot;</span><span class="p">,</span>
+                       by.y <span class="o">=</span> <span class="s">&quot;Id&quot;</span><span class="p">)</span>
+<span class="c1">#write output</span>
+write.table<span class="p">(</span>x <span class="o">=</span> heatvscontrol_down_func<span class="p">,</span> file <span class="o">=</span> <span class="s">&quot;heatvscontrol_down_func.txt&quot;</span><span class="p">,</span> quote <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> sep <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">,</span> row.names <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Up-regulated gene list: <a class="reference external" href="http://de.cyverse.org/dl/d/E641698E-8688-4C20-B829-0B12BABC8ABB/heatvscontrol_up_func.txt">http://de.cyverse.org/dl/d/E641698E-8688-4C20-B829-0B12BABC8ABB/heatvscontrol_up_func.txt</a></p>
+<p>Down-regulated gene list: <a class="reference external" href="http://de.cyverse.org/dl/d/3C45B913-612F-4B97-8F44-8021470AE527/heatvscontrol_down_func.txt">http://de.cyverse.org/dl/d/3C45B913-612F-4B97-8F44-8021470AE527/heatvscontrol_down_func.txt</a></p>
 </div>
 </div>
 
