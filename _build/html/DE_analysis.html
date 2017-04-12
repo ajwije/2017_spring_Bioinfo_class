@@ -103,7 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping short reads</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Differential gene expression analysis</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#deseq-tutorial">DESeq tutorial:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#edger-tutorial">EdgeR tutorial:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-to-perform-deseq-analysis">Steps to perform DEseq analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -174,17 +174,64 @@
 </div>
 <div class="section" id="differential-gene-expression-analysis">
 <h1>Differential gene expression analysis<a class="headerlink" href="#differential-gene-expression-analysis" title="Permalink to this headline">¶</a></h1>
-<p>Link for  Bowtie mapped counts <a class="reference external" href="http://de.cyverse.org/dl/d/FDB1BFD9-2B6D-480D-95C8-8CC547929E88/170407_bowtie_counts.txt">http://de.cyverse.org/dl/d/FDB1BFD9-2B6D-480D-95C8-8CC547929E88/170407_bowtie_counts.txt</a></p>
+<p>Link for  Bowtie mapped counts <a class="reference external" href="http://de.cyverse.org/dl/d/E9B4C299-D6CB-4656-A4F6-FF67240AEA49/170407_bowtie_counts.txt">http://de.cyverse.org/dl/d/E9B4C299-D6CB-4656-A4F6-FF67240AEA49/170407_bowtie_counts.txt</a></p>
 <p>Target file for bowtie mapped reads: <a class="reference external" href="http://de.cyverse.org/dl/d/BECB62C3-A369-4084-9BC9-2BFD9E6E9600/bowtie_target.txt">http://de.cyverse.org/dl/d/BECB62C3-A369-4084-9BC9-2BFD9E6E9600/bowtie_target.txt</a></p>
-<p>Link for  Tophat mapped counts: <a class="reference external" href="http://de.cyverse.org/dl/d/3C9B0A04-92E5-4749-ACFB-402BCC60DB54/tophat_counts.txt">http://de.cyverse.org/dl/d/3C9B0A04-92E5-4749-ACFB-402BCC60DB54/tophat_counts.txt</a></p>
-<p>Target file for bowtie mapped reads: <a class="reference external" href="http://de.cyverse.org/dl/d/BFD22065-1E6D-47BE-9023-309152DED2D1/tophat_target.txt">http://de.cyverse.org/dl/d/BFD22065-1E6D-47BE-9023-309152DED2D1/tophat_target.txt</a></p>
 <div class="section" id="deseq-tutorial">
 <h2>DESeq tutorial:<a class="headerlink" href="#deseq-tutorial" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://pods.iplantcollaborative.org/wiki/display/DEapps/DESeq">Tutorial link</a></p>
 </div>
-<div class="section" id="edger-tutorial">
-<h2>EdgeR tutorial:<a class="headerlink" href="#edger-tutorial" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://pods.iplantcollaborative.org/wiki/display/DEapps/edgeR+(multifactorial+pairwise+comparisons)+in+DE">Tutorial link</a></p>
+<div class="section" id="steps-to-perform-deseq-analysis">
+<h2>Steps to perform DEseq analysis<a class="headerlink" href="#steps-to-perform-deseq-analysis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">From Apps select &#8220;DEseq (Multifactorial Comparison)</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DEseq_1.png" src="_images/DEseq_1.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Name your analysis and select a folder where your results need to be saved.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DEseq_2.png" src="_images/DEseq_2.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Select the correct target file and the count file.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DEseq_3.png" src="_images/DEseq_3.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>4. Give a name to the project. Reference biological condition should be &#8220;control&#8221; samples. Variable of
+interest is &#8220;group&#8221; (Column header of the third column of the target file).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="5">
+<li><p class="first">Set the significant threshold to 0.05 and launch the analysis.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DEseq_5.png" src="_images/DEseq_5.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
 </div>
 </div>
 
