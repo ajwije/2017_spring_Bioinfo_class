@@ -25,7 +25,8 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    mapping.rst
    DE_analysis.rst
    
-   .. toctree::
+
+.. toctree::
    :maxdepth: 100
    :caption: Protein analysis
    
