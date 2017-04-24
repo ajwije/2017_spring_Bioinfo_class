@@ -79,6 +79,8 @@ Tertiary Structure Prediction
 |
 	:b:. Selected sequences are in the following fasta file. 
 	
+	https://github.com/ajwije/2017_spring_Bioinfo_class/blob/master/rad54.fasta
+	
 	:c:. Use `Tcoffee server <http://tcoffee.crg.cat/apps/tcoffee/do:expresso>`_  and align the sequences using structural information:
 		
 
