@@ -24,8 +24,15 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    adapter_trimming.rst
    mapping.rst
    DE_analysis.rst
-
-
+   
+   .. toctree::
+   :maxdepth: 100
+   :caption: Protein analysis
+   
+   protein_structure.rst
+  
+   
+      
 
 Indices and tables
 ==================
