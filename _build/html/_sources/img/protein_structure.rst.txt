@@ -71,8 +71,6 @@ Tertiary Structure Prediction
 
 
 4. Perform a multiple sequence alignment to find conserved sequences. 
-|
-
 	:a:. Retrive sequence from databank
 
 	.. figure:: img/protein_struct_3.png
@@ -81,6 +79,8 @@ Tertiary Structure Prediction
 	
 	:c:. Use `Tcoffee server <http://tcoffee.crg.cat/apps/tcoffee/do:expresso>`_  and align the sequences using structural information:
 		
+
+*`Previous results <http://tcoffee.crg.cat/apps/tcoffee/result?rid=85ce39c6>`_ 
 
 5. You can download crystal structure information from PDB in Cn3 format.
 
