@@ -46,6 +46,10 @@ will count the number of mapped reads.
 .. figure:: img/samtools_5.png
 
 
+** You can get the flagstat for all six files from following link.**
+|
+https://github.com/ajwije/2017_spring_Bioinfo_class/blob/master/Files/flagstat.txt
+
 I have used the following bash command to count mapped reads in case you are interested in it doing programmatically. 
 
 .. code-block:: bash
