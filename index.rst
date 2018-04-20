@@ -32,7 +32,14 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    :caption: Protein analysis
    
    protein_structure.rst
-  
+
+
+.. toctree::
+   :maxdepth: 100
+   :caption: qPCR data analysis 
+   
+   Delta-Delta_Ct_Method.rst
+     
    
       
 

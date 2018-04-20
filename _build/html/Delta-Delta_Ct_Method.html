@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Inclass Activities 170218 documentation</title>
+  <title>The Delta-Delta Ct Method &mdash; Inclass Activities 170218 documentation</title>
   
 
   
@@ -34,7 +33,7 @@
 
   
         <link rel="index" title="Index"
-              href="#"/>
+              href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/> 
 
@@ -109,10 +108,6 @@
 <li class="toctree-l1"><a class="reference internal" href="protein_structure.html">Secondary Structure Prediction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="protein_structure.html#tertiary-structure-prediction">Tertiary Structure Prediction</a></li>
 </ul>
-<p class="caption"><span class="caption-text">qPCR data analysis</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Delta-Delta_Ct_Method.html">The Delta-Delta Ct Method</a></li>
-</ul>
 
             
           
@@ -156,12 +151,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>The Delta-Delta Ct Method</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/Delta-Delta_Ct_Method.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -173,11 +170,103 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="the-delta-delta-ct-method">
+<h1>The Delta-Delta Ct Method<a class="headerlink" href="#the-delta-delta-ct-method" title="Permalink to this headline">¶</a></h1>
+<p>Delta-Delta Ct method or Livak method is the most preferred method for qPCR data analysis. However, it can only be used when certain criteria are met.
+Please refer the lecture notes to make sure that these criteria are fulfilled. If not, more generalized method is called Pfaffl method. Please read the additional to
+get more information about this method.</p>
+<p>Here are the steps for Livak method:</p>
+<p>The Excel file with all the calculation are in the qPCR analysis folder on Blackboard.</p>
+<p>You have raw Ct (number of cycles that takes to reach threshold) for normal and tumor cells (3 replicates for each).</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_1.png" src="_images/qPCR_1.png" />
+</div>
+</div></blockquote>
+<div class="section" id="normalization">
+<h2>Normalization<a class="headerlink" href="#normalization" title="Permalink to this headline">¶</a></h2>
+<p>First, you will need calculate relative difference between the gene of interest (p53) and the house keeping gene (GAPDH).</p>
+<p>∆Ct = Ct (gene of interest) – Ct (housekeeping gene)</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_2.png" src="_images/qPCR_2.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="average-of-the-control-samples-normal-cells">
+<h2>Average of the control samples (normal cells)<a class="headerlink" href="#average-of-the-control-samples-normal-cells" title="Permalink to this headline">¶</a></h2>
+<p>As we compare our tumor (treatment) to control (normal cells), first we need to average the ∆Ct for the 3 control (normal) samples.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_3.png" src="_images/qPCR_3.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="calculate-the-ct-relative-to-the-average-of-ct-normal-cells">
+<h2>Calculate the ∆∆Ct relative to the average of ∆Ct normal cells<a class="headerlink" href="#calculate-the-ct-relative-to-the-average-of-ct-normal-cells" title="Permalink to this headline">¶</a></h2>
+<p>∆∆Ct = ∆Ct (Tumor sample) – ∆Ct (normal average)</p>
+<p>You can do this normal samples as well. Use $ signs infront of column number and raw letter (arrows) to fix the cell.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_4.png" src="_images/qPCR_4.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="fold-gene-expression-for-each-sample">
+<h2>Fold gene expression for each sample<a class="headerlink" href="#fold-gene-expression-for-each-sample" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you raise the negative ∆∆Ct to power of two.</p>
+<p>Fold gene expression = 2^-(∆∆Ct)</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_5.png" src="_images/qPCR_5.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="overall-fold-change">
+<h2>Overall fold change<a class="headerlink" href="#overall-fold-change" title="Permalink to this headline">¶</a></h2>
+<p>You can calculate average fold change for both tumor and normal samples. Ratio between these two the fold change between tumor and normal samples.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_6.png" src="_images/qPCR_6.png" />
+</div>
+<div class="figure">
+<img alt="_images/qPCR_7.png" src="_images/qPCR_7.png" />
+</div>
+<div class="figure">
+<img alt="_images/qPCR_8.png" src="_images/qPCR_8.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="log-transformation">
+<h2>Log transformation<a class="headerlink" href="#log-transformation" title="Permalink to this headline">¶</a></h2>
+<p>To perform  parametric statistical tests such as T-test, it advised to transform the final gene expression results to log values (any log base). This would make
+data distribution symmetric.</p>
+<p>Here we have change the 2^-(∆∆Ct) to log 10.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_9.png" src="_images/qPCR_9.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="t-test">
+<h2>T-test<a class="headerlink" href="#t-test" title="Permalink to this headline">¶</a></h2>
+<p>Need to be careful when using parametric tests if data is not normally distributed, it would lead to erroneous conclusions.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_9.png" src="_images/qPCR_9.png" />
+</div>
+</div></blockquote>
+<p>Select log 10 of 2^-(∆∆Ct) values for Normal and tumor samples as indicated. Use two tail test (number 2) and assuming unequal variance (3).</p>
+<p>Resulting P value is less than 0.05 and therefore, we reject the null hypothesis and two sample means are significantly different at 0.05 level.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/qPCR_10.png" src="_images/qPCR_10.png" />
+</div>
+</div></blockquote>
+</div>
 </div>
 
 
