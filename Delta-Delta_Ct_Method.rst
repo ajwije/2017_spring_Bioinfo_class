@@ -128,6 +128,6 @@ Select log 10 of 2^-(∆∆Ct) values for Normal and tumor samples as indicated.
 
 Resulting P value is less than 0.05 and therefore, we reject the null hypothesis and two sample means are significantly different at 0.05 level. 
 
-	.. figure:: img/qPCR_10.png
+	.. figure:: img/qPCR_11.png
 	
 
