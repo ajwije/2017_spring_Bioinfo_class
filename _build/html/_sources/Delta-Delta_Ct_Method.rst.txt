@@ -16,7 +16,7 @@ The Delta-Delta Ct Method
 ==============================
 
 Delta-Delta Ct method or Livak method is the most preferred method for qPCR data analysis. However, it can only be used when certain criteria are met. 
-Please refer the lecture notes to make sure that these criteria are fulfilled. If not, more generalized method is called Pfaffl method. Please read the additional to
+Please refer the lecture notes to make sure that these criteria are fulfilled. If not, more generalized method is called Pfaffl method. Please read the additional reading material to
 get more information about this method. 
 
 
@@ -30,7 +30,7 @@ You have raw Ct (number of cycles that takes to reach threshold) for normal and 
 	.. figure:: img/qPCR_1.png
 
 
-
+--------------------------------------
 
 Normalization 
 -----------------------
@@ -42,7 +42,7 @@ First, you will need calculate relative difference between the gene of interest 
 
 	.. figure:: img/qPCR_2.png
 
-
+--------------------------------------------------------
 
 Average of the control samples (normal cells) 
 ------------------------------------------------
@@ -51,6 +51,8 @@ As we compare our tumor (treatment) to control (normal cells), first we need to 
 
 
 	.. figure:: img/qPCR_3.png
+
+---------------------------------------------------------------
 
 
 Calculate the ∆∆Ct relative to the average of ∆Ct normal cells
@@ -64,6 +66,11 @@ You can do this normal samples as well. Use $ signs infront of column number and
 	.. figure:: img/qPCR_4.png
 
 
+
+---------------------------------------------------------------
+
+
+
 Fold gene expression for each sample
 --------------------------------------
 
@@ -72,6 +79,9 @@ Make sure you raise the negative ∆∆Ct to power of two.
 Fold gene expression = 2^-(∆∆Ct)
 
 	.. figure:: img/qPCR_5.png
+
+-----------------------------------------------------------------
+
 
 
 Overall fold change
@@ -89,6 +99,7 @@ You can calculate average fold change for both tumor and normal samples. Ratio b
 
 	.. figure:: img/qPCR_8.png
 
+----------------------------------------------------------------------
 
 Log transformation
 -------------------
@@ -102,7 +113,7 @@ Here we have change the 2^-(∆∆Ct) to log 10.
 
 	.. figure:: img/qPCR_9.png
 
-
+----------------------------------------------------------------------
 
 T-test
 --------------

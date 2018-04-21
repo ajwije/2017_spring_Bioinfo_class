@@ -35,7 +35,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/> 
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="prev" title="Secondary Structure Prediction" href="protein_structure.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -108,6 +109,19 @@
 <li class="toctree-l1"><a class="reference internal" href="protein_structure.html">Secondary Structure Prediction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="protein_structure.html#tertiary-structure-prediction">Tertiary Structure Prediction</a></li>
 </ul>
+<p class="caption"><span class="caption-text">qPCR data analysis</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Delta-Delta Ct Method</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#normalization">Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#average-of-the-control-samples-normal-cells">Average of the control samples (normal cells)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calculate-the-ct-relative-to-the-average-of-ct-normal-cells">Calculate the ∆∆Ct relative to the average of ∆Ct normal cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fold-gene-expression-for-each-sample">Fold gene expression for each sample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overall-fold-change">Overall fold change</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log-transformation">Log transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t-test">T-test</a></li>
+</ul>
+</li>
+</ul>
 
             
           
@@ -176,7 +190,7 @@
 <div class="section" id="the-delta-delta-ct-method">
 <h1>The Delta-Delta Ct Method<a class="headerlink" href="#the-delta-delta-ct-method" title="Permalink to this headline">¶</a></h1>
 <p>Delta-Delta Ct method or Livak method is the most preferred method for qPCR data analysis. However, it can only be used when certain criteria are met.
-Please refer the lecture notes to make sure that these criteria are fulfilled. If not, more generalized method is called Pfaffl method. Please read the additional to
+Please refer the lecture notes to make sure that these criteria are fulfilled. If not, more generalized method is called Pfaffl method. Please read the additional reading material to
 get more information about this method.</p>
 <p>Here are the steps for Livak method:</p>
 <p>The Excel file with all the calculation are in the qPCR analysis folder on Blackboard.</p>
@@ -186,6 +200,7 @@ get more information about this method.</p>
 <img alt="_images/qPCR_1.png" src="_images/qPCR_1.png" />
 </div>
 </div></blockquote>
+<hr class="docutils" />
 <div class="section" id="normalization">
 <h2>Normalization<a class="headerlink" href="#normalization" title="Permalink to this headline">¶</a></h2>
 <p>First, you will need calculate relative difference between the gene of interest (p53) and the house keeping gene (GAPDH).</p>
@@ -196,6 +211,7 @@ get more information about this method.</p>
 </div>
 </div></blockquote>
 </div>
+<hr class="docutils" />
 <div class="section" id="average-of-the-control-samples-normal-cells">
 <h2>Average of the control samples (normal cells)<a class="headerlink" href="#average-of-the-control-samples-normal-cells" title="Permalink to this headline">¶</a></h2>
 <p>As we compare our tumor (treatment) to control (normal cells), first we need to average the ∆Ct for the 3 control (normal) samples.</p>
@@ -205,6 +221,7 @@ get more information about this method.</p>
 </div>
 </div></blockquote>
 </div>
+<hr class="docutils" />
 <div class="section" id="calculate-the-ct-relative-to-the-average-of-ct-normal-cells">
 <h2>Calculate the ∆∆Ct relative to the average of ∆Ct normal cells<a class="headerlink" href="#calculate-the-ct-relative-to-the-average-of-ct-normal-cells" title="Permalink to this headline">¶</a></h2>
 <p>∆∆Ct = ∆Ct (Tumor sample) – ∆Ct (normal average)</p>
@@ -215,6 +232,7 @@ get more information about this method.</p>
 </div>
 </div></blockquote>
 </div>
+<hr class="docutils" />
 <div class="section" id="fold-gene-expression-for-each-sample">
 <h2>Fold gene expression for each sample<a class="headerlink" href="#fold-gene-expression-for-each-sample" title="Permalink to this headline">¶</a></h2>
 <p>Make sure you raise the negative ∆∆Ct to power of two.</p>
@@ -225,6 +243,7 @@ get more information about this method.</p>
 </div>
 </div></blockquote>
 </div>
+<hr class="docutils" />
 <div class="section" id="overall-fold-change">
 <h2>Overall fold change<a class="headerlink" href="#overall-fold-change" title="Permalink to this headline">¶</a></h2>
 <p>You can calculate average fold change for both tumor and normal samples. Ratio between these two the fold change between tumor and normal samples.</p>
@@ -240,6 +259,7 @@ get more information about this method.</p>
 </div>
 </div></blockquote>
 </div>
+<hr class="docutils" />
 <div class="section" id="log-transformation">
 <h2>Log transformation<a class="headerlink" href="#log-transformation" title="Permalink to this headline">¶</a></h2>
 <p>To perform  parametric statistical tests such as T-test, it advised to transform the final gene expression results to log values (any log base). This would make
@@ -251,6 +271,7 @@ data distribution symmetric.</p>
 </div>
 </div></blockquote>
 </div>
+<hr class="docutils" />
 <div class="section" id="t-test">
 <h2>T-test<a class="headerlink" href="#t-test" title="Permalink to this headline">¶</a></h2>
 <p>Need to be careful when using parametric tests if data is not normally distributed, it would lead to erroneous conclusions.</p>
@@ -276,6 +297,13 @@ data distribution symmetric.</p>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="protein_structure.html" class="btn btn-neutral" title="Secondary Structure Prediction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
