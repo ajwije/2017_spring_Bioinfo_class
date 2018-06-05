@@ -40,9 +40,18 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    
    Delta-Delta_Ct_Method.rst
      
-   
-      
 
+.. toctree::
+   :maxdepth: 100
+   :caption: Galaxy for HTS analysis 
+   
+   getting_data.rst
+   GalaxyfastQC.rst   
+   galaxy_adapter_trimming.rst
+   
+   
+   
+   
 Indices and tables
 ==================
 

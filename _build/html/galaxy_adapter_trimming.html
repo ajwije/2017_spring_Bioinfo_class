@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; Inclass Activities 170218 documentation</title>
+  <title>Adapter and quality trimming using trim-galore &mdash; Inclass Activities 170218 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="#"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/> 
 
   
@@ -71,7 +71,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -115,8 +115,7 @@
 <p class="caption"><span class="caption-text">Galaxy for HTS analysis</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_data.html">Getting data into Galaxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Galaxy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="galaxy_adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
 </ul>
 
             
@@ -161,10 +160,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Adapter and quality trimming using trim-galore</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/galaxy_adapter_trimming.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -176,19 +179,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="adapter-and-quality-trimming-using-trim-galore">
+<h1>Adapter and quality trimming using trim-galore<a class="headerlink" href="#adapter-and-quality-trimming-using-trim-galore" title="Permalink to this headline">¶</a></h1>
+<p>We are going to use Trim-galore to trim adapters, and poor quality bases. This tool has several advantages. It allows selection
+multiple files. You can also select both forward and reverse reads. If you want to read more about Trim-galore,
+please visit their <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">website</a>.
+Also, Trim-galore is a wrapper for <a class="reference external" href="http://cutadapt.readthedocs.io/en/stable/guide.html#three-prime-adapters">Cutadapt</a> ,
+which is the actual tool that performs the trimming.</p>
+<p><em>Please follow the tutorial carefully.</em></p>
+<div class="section" id="step-1-launching-trim-galore-and-performing-the-analysis">
+<h2>Step 1: <strong>Launching Trim-galore and performing the analysis</strong><a class="headerlink" href="#step-1-launching-trim-galore-and-performing-the-analysis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Type Trim-galore in the search box on top left hand corner.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Select paired-end and select the two paired-end files are shown below. Use Illumina universal adapter to trim.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_galore_1.png" src="_images/trim_galore_1.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Click on the advance settings. Set the parameters as indicated in red arrows.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_galore_2.png" src="_images/trim_galore_2.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Launch the analysis.</p>
+</li>
+</ol>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            <div class="articleComments">
@@ -234,7 +264,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -250,14 +279,7 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

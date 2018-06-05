@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting data into Galaxy &mdash; Inclass Activities 170218 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="next" title="FastQC analysis using Cyverse Discovery Environment (DE)" href="GalaxyfastQC.html"/>
+        <link rel="prev" title="The Delta-Delta Ct Method" href="Delta-Delta_Ct_Method.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Inclass Activities
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Bioinformatics part I</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="MEGA_alignment.html">1. Multiple Sequence Alignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics.html">2. Steps of building a tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics_2.html">3. Steps of building a tree (Part II)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">High-throughput data analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relaunch.html">Relaunching a stalled analysis in Cyverse Discovery Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping short reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flag_stat.html">Counting mapped reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysis.html">Differential gene expression analysis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protein analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="protein_structure.html">Secondary Structure Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protein_structure.html#tertiary-structure-prediction">Tertiary Structure Prediction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">qPCR data analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Delta-Delta_Ct_Method.html">The Delta-Delta Ct Method</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Galaxy for HTS analysis</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting data into Galaxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-login-into-galaxy">Step 1: <strong>Login into Galaxy</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-getting-data">Step 2: Getting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-click-on-the-upload-icon-on-upper-left-hand-corner">Step 1: Click on the upload icon on upper left hand corner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-copy-one-of-the-links-above-click-on-the-paste-fetch-icon-and-paste-link-in-the-box-click-on-start">Step 2: Copy one of the links above. Click on the Paste/Fetch icon and paste link in the box. Click on start.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-one-the-data-is-uploaded-they-will-appear-in-the-right-hand-panel-you-can-use-the-pencil-icon-to-change-the-name">Step 3: One the data is uploaded, they will appear in the right hand panel. You can use the pencil icon to change the name.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference">|Reference:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inclass Activities</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting data into Galaxy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/getting_data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>. module:: Getting Data into Galaxy</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">synopsis:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="getting-data-into-galaxy">
+<h1>Getting data into Galaxy<a class="headerlink" href="#getting-data-into-galaxy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1-login-into-galaxy">
+<h2>Step 1: <strong>Login into Galaxy</strong><a class="headerlink" href="#step-1-login-into-galaxy" title="Permalink to this headline">¶</a></h2>
+<p>Click on the following link to go to the ASU Galaxy site:</p>
+<p><a class="reference external" href="https://orpheus.cs.astate.edu/">https://orpheus.cs.astate.edu/</a></p>
+<p>Use your ASU username and password to login to Galaxy.</p>
+</div>
+<div class="section" id="step-2-getting-data">
+<h2>Step 2: Getting data<a class="headerlink" href="#step-2-getting-data" title="Permalink to this headline">¶</a></h2>
+<p>Data we are using for this analysis came from Loraine et al, 2015 study. In the original study,
+there are 10 samples (Five Controls and heat treated). Here we are using only 3 samples for each
+group (3 control and 3 heat treated). These files were downloaded from NCBI&#8217;s Short Read Archive (SRA)
+using SRA <a class="reference external" href="http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc">toolkit</a>.</p>
+<p>Use the following links to get data. Each link is one data file.</p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/2AB5824F-73BA-4C6B-8530-457609F632BA/Control2_1.fastq">https://de.cyverse.org/dl/d/2AB5824F-73BA-4C6B-8530-457609F632BA/Control2_1.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/46E690E4-C4A0-495F-9B11-F12AD9A25EE3/Control2_2.fastq">https://de.cyverse.org/dl/d/46E690E4-C4A0-495F-9B11-F12AD9A25EE3/Control2_2.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/7FEE6359-24AE-478D-A0B1-C6D2CA09E45E/Control3_1.fastq">https://de.cyverse.org/dl/d/7FEE6359-24AE-478D-A0B1-C6D2CA09E45E/Control3_1.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/8FBB264D-F0CA-4F2C-821A-DB1C709315B2/Control3_2.fastq">https://de.cyverse.org/dl/d/8FBB264D-F0CA-4F2C-821A-DB1C709315B2/Control3_2.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/9A45E994-2CDC-4643-AC4C-45C9625138F6/Heat1_1.fastq">https://de.cyverse.org/dl/d/9A45E994-2CDC-4643-AC4C-45C9625138F6/Heat1_1.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/46093383-493A-4D4E-A607-D3E56916DF59/Heat1_2.fastq">https://de.cyverse.org/dl/d/46093383-493A-4D4E-A607-D3E56916DF59/Heat1_2.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/9668B243-7009-4AD3-BBDA-350D6A60119D/Heat2_1.fastq">https://de.cyverse.org/dl/d/9668B243-7009-4AD3-BBDA-350D6A60119D/Heat2_1.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/FE1C3CC3-9133-4244-BCBB-816B8D2D5F97/Heat2_2.fastq">https://de.cyverse.org/dl/d/FE1C3CC3-9133-4244-BCBB-816B8D2D5F97/Heat2_2.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/D635B6EE-BE26-4BC4-A058-3E51B1AA69C4/Heat3_1.fastq">https://de.cyverse.org/dl/d/D635B6EE-BE26-4BC4-A058-3E51B1AA69C4/Heat3_1.fastq</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/dl/d/F88561AF-CFF2-4FC8-B6B4-D8623779BB24/Heat3_2.fastq">https://de.cyverse.org/dl/d/F88561AF-CFF2-4FC8-B6B4-D8623779BB24/Heat3_2.fastq</a></p>
+</div>
+<div class="section" id="step-1-click-on-the-upload-icon-on-upper-left-hand-corner">
+<h2>Step 1: Click on the upload icon on upper left hand corner<a class="headerlink" href="#step-1-click-on-the-upload-icon-on-upper-left-hand-corner" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/getting_data_1.png" src="_images/getting_data_1.png" />
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-2-copy-one-of-the-links-above-click-on-the-paste-fetch-icon-and-paste-link-in-the-box-click-on-start">
+<h2>Step 2: Copy one of the links above. Click on the Paste/Fetch icon and paste link in the box. Click on start.<a class="headerlink" href="#step-2-copy-one-of-the-links-above-click-on-the-paste-fetch-icon-and-paste-link-in-the-box-click-on-start" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/getting_data_2.png" src="_images/getting_data_2.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-3-one-the-data-is-uploaded-they-will-appear-in-the-right-hand-panel-you-can-use-the-pencil-icon-to-change-the-name">
+<h2>Step 3: One the data is uploaded, they will appear in the right hand panel. You can use the pencil icon to change the name.<a class="headerlink" href="#step-3-one-the-data-is-uploaded-they-will-appear-in-the-right-hand-panel-you-can-use-the-pencil-icon-to-change-the-name" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/getting_data_3.png" src="_images/getting_data_3.png" />
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="reference">
+<h2><a href="#id1"><span class="problematic" id="id2">|</span></a>Reference:<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p><strong>Loraine AE</strong>, Blakley IC, Jagadeesan S, Harper J, Miller G, Firon N.
+Analysis and Visualization of RNA-Seq Expression Data Using RStudio, Bioconductor,
+and Integrated Genome Browser.
+<em>Methods Mol Biol.</em> 2015;1284:481-501. doi: 10.1007/978-1-4939-2444-8_24.
+PubMed PMID: 25757788.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GalaxyfastQC.html" class="btn btn-neutral float-right" title="FastQC analysis using Cyverse Discovery Environment (DE)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Delta-Delta_Ct_Method.html" class="btn btn-neutral" title="The Delta-Delta Ct Method" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Asela Wijeratne.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'170218',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
