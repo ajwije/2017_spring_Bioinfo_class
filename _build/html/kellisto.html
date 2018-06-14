@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Inclass Activities 170218 documentation</title>
+  <title>Use Kellisto to map reads to cDNA and count &mdash; Inclass Activities 170218 documentation</title>
   
 
   
@@ -34,7 +33,7 @@
 
   
         <link rel="index" title="Index"
-              href="#"/>
+              href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/> 
 
@@ -119,8 +118,6 @@
 <li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Galaxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="galaxy_adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tophat.html">Use Splice aware aligner, Tophat2 to align short reads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="htseq.html">Use Htseq to counts reads mapped to features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kellisto.html">Use Kellisto to map reads to cDNA and count</a></li>
 </ul>
 
             
@@ -165,12 +162,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Use Kellisto to map reads to cDNA and count</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/kellisto.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -182,11 +181,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="use-kellisto-to-map-reads-to-cdna-and-count">
+<h1>Use Kellisto to map reads to cDNA and count<a class="headerlink" href="#use-kellisto-to-map-reads-to-cdna-and-count" title="Permalink to this headline">¶</a></h1>
+<p>Kellisto is an ultrafast alignment-free quantification tool.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple">
+<li>Change parameters as indicated.</li>
+</ol>
+<p>2. cDNA file can be obtained from the Solgenome.net(<a class="reference external" href="ftp://ftp.solgenomics.net/tomato_genome/annotation/ITAG3.0_release/ITAG3.0_cDNA.fasta">ftp://ftp.solgenomics.net/tomato_genome/annotation/ITAG3.0_release/ITAG3.0_cDNA.fasta</a>)
+|</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/kellisto_1.png" src="_images/kellisto_1.png" />
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Once you get the results, click on the &#8220;eye&#8221; icon on the history pane. Then click on the &#8220;disk&#8221; icon on the left bottom left-hand corner to download the data into your computer.</li>
+<li>Open the download file with Excel.</li>
+</ol>
+<p>5. In Excel, click on &#8220;Data&#8221; and then click on &#8220;Text to Column&#8221;. Separate column using tab to separate data into columns.
+Sum the numbers in &#8220;est_counts&#8221; using Auto Sum function.</p>
 </div>
 
 
