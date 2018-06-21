@@ -51,6 +51,7 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    tophat.rst
    htseq.rst
    kellisto.rst
+   DE_analysisR.rst
    
    
    

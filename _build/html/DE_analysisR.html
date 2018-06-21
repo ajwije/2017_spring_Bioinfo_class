@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setup instructions (This is from Data Carpentry (http://www.datacarpentry.org/R-genomics/)) &mdash; Inclass Activities 170218 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="prev" title="Use Kellisto to map reads to cDNA and count" href="kellisto.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Inclass Activities
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Bioinformatics part I</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="MEGA_alignment.html">1. Multiple Sequence Alignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics.html">2. Steps of building a tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics_2.html">3. Steps of building a tree (Part II)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">High-throughput data analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relaunch.html">Relaunching a stalled analysis in Cyverse Discovery Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping short reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flag_stat.html">Counting mapped reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysis.html">Differential gene expression analysis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protein analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="protein_structure.html">Secondary Structure Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protein_structure.html#tertiary-structure-prediction">Tertiary Structure Prediction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">qPCR data analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Delta-Delta_Ct_Method.html">The Delta-Delta Ct Method</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Galaxy for HTS analysis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_data.html">Getting data into Galaxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Galaxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galaxy_adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tophat.html">Use Splice aware aligner, Tophat2 to align short reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htseq.html">Use Htseq to counts reads mapped to features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kellisto.html">Use Kellisto to map reads to cDNA and count</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup instructions (This is from Data Carpentry (http://www.datacarpentry.org/R-genomics/))</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-you-already-have-r-and-rstudio-installed">If you already have R and RStudio installed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-you-dont-have-r-and-rstudio-installed">If you don’t have R and RStudio installed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macos">macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">If you already have R and RStudio installed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">If you don’t have R and RStudio installed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#using-deseq-and-edger-to-find-differentially-expressed-genes">Using DEseq and EdgeR to find differentially expressed genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#deseq-analysis">DEseq analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#combine-deseq-and-edgr-to-make-venn-diagram">Combine DESeq and EdgR  to make Venn diagram</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inclass Activities</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Setup instructions (This is from Data Carpentry (http://www.datacarpentry.org/R-genomics/))</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/DE_analysisR.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<hr class="docutils" />
+<div class="section" id="setup-instructions-this-is-from-data-carpentry-http-www-datacarpentry-org-r-genomics">
+<h1>Setup instructions (This is from Data Carpentry (<a class="reference external" href="http://www.datacarpentry.org/R-genomics/">http://www.datacarpentry.org/R-genomics/</a>))<a class="headerlink" href="#setup-instructions-this-is-from-data-carpentry-http-www-datacarpentry-org-r-genomics" title="Permalink to this headline">¶</a></h1>
+<p>R and RStudio are separate downloads and installations. R is the underlying statistical computing environment, but using R alone is no fun. RStudio is a graphical integrated development environment (IDE) that makes using R much easier and more interactive. You need to install R before you install RStudio. After installing both programs, you will need to install the tidyverse package from within RStudio. Follow the instructions below for your operating system, and then follow the instructions to install tidyverse and RSQLite.</p>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="if-you-already-have-r-and-rstudio-installed">
+<h2>If you already have R and RStudio installed<a class="headerlink" href="#if-you-already-have-r-and-rstudio-installed" title="Permalink to this headline">¶</a></h2>
+<p>Open RStudio, and click on “Help” &gt; “Check for updates”. If a new version is available, quit RStudio, and download the latest version for RStudio.
+To check which version of R you are using, start RStudio and the first thing that appears in the console indicates the version of R you are running. Alternatively, you can type sessionInfo(), which will also display which version of R you are running. Go on the CRAN website and check whether a more recent version is available. If so, please download and install it. You can check here for more information on how to remove old versions from your system if you wish to do so.</p>
+</div>
+<div class="section" id="if-you-dont-have-r-and-rstudio-installed">
+<h2>If you don’t have R and RStudio installed<a class="headerlink" href="#if-you-dont-have-r-and-rstudio-installed" title="Permalink to this headline">¶</a></h2>
+<p>Download R from the CRAN website.
+Run the .exe file that was just downloaded
+Go to the RStudio download page
+Under Installers select RStudio x.yy.zzz - Windows XP/Vista/7/8 (where x, y, and z represent version numbers)
+Double click the file to install it
+Once it’s installed, open RStudio to make sure it works and you don’t get any error messages.</p>
+</div>
+<div class="section" id="macos">
+<h2>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id1">
+<h2>If you already have R and RStudio installed<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Open RStudio, and click on “Help” &gt; “Check for updates”. If a new version is available, quit RStudio, and download the latest version for RStudio.
+To check the version of R you are using, start RStudio and the first thing that appears on the terminal indicates the version of R you are running. Alternatively, you can type sessionInfo(), which will also display which version of R you are running. Go on the CRAN website and check whether a more recent version is available. If so, please download and install it.</p>
+</div>
+<div class="section" id="id2">
+<h2>If you don’t have R and RStudio installed<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Download R from the CRAN website.
+Select the .pkg file for the latest R version
+Double click on the downloaded file to install R
+It is also a good idea to install XQuartz (needed by some packages)
+Go to the RStudio download page
+Under Installers select RStudio x.yy.zzz - Mac OS X 10.6+ (64-bit) (where x, y, and z represent version numbers)
+Double click the file to install RStudio
+Once it’s installed, open RStudio to make sure it works and you don’t get any error messages.</p>
+</div>
+</div>
+<div class="section" id="using-deseq-and-edger-to-find-differentially-expressed-genes">
+<h1>Using DEseq and EdgeR to find differentially expressed genes<a class="headerlink" href="#using-deseq-and-edger-to-find-differentially-expressed-genes" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div></div></blockquote>
+<p>The first step is to merge all count data files we got from the Htseq. Use the Join two data sets side-by-side on Galaxy and
+select output from Control2 and Control3 samples. Use Column one to join the data sets. After this is complete, take the resulting file,
+and combine with Temperate1 output. Repeat this for the next two data sets.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DE_1.png" src="_images/DE_1.png" />
+</div>
+</div></blockquote>
+<p>The resulting file would like this. Your actual number may be different, but should have 10 columns.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DE_2.png" src="_images/DE_2.png" />
+</div>
+</div></blockquote>
+<p>Download this file onto your computer and move it to folder called &#8220;Counts&#8221;. Rename file &#8220;counts.tabular&#8221;.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DE_3.png" src="_images/DE_3.png" />
+</div>
+</div></blockquote>
+<p>Open Rstudio and go to Session and select &#8220;Set Working Directory&#8221; and chose the folder that you just created.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/DE_4.png" src="_images/DE_4.png" />
+</div>
+</div></blockquote>
+<p>In the console, you will see the following message and the part underline in red is the path to your directory.</p>
+<p>Replace your path with &#8220;/Users/aselawijeratne/Desktop&#8221; in the following code. Execute this to read file into R.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>d1<span class="o">=</span>read.delim<span class="p">(</span><span class="s">&#39;/Users/aselawijeratne/Desktop/Counts/counts.tabular&#39;</span><span class="p">,</span> header <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Format data using R.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1">#select only column with data</span>
+d1 <span class="o">&lt;-</span> d1<span class="p">[</span><span class="o">-</span><span class="kt">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">9</span><span class="p">)]</span>
+
+<span class="c1">#Name the columns</span>
+<span class="kp">colnames</span><span class="p">(</span>d1<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;gene_names&quot;</span><span class="p">,</span> <span class="s">&quot;C2&quot;</span><span class="p">,</span> <span class="s">&quot;C3&quot;</span><span class="p">,</span> <span class="s">&quot;T1&quot;</span><span class="p">,</span> <span class="s">&quot;T2&quot;</span><span class="p">,</span> <span class="s">&quot;T3&quot;</span><span class="p">)</span>
+
+<span class="c1">#get rid of the mRNA part infront of the gene name</span>
+row_names <span class="o">&lt;-</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;mRNA:&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> d1<span class="o">$</span>gene_names<span class="p">)</span>
+<span class="c1">#remove the last trailing &quot;.1&quot; from gene names</span>
+row_names <span class="o">&lt;-</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&#39;.{2}$&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> row_names<span class="p">)</span>
+
+<span class="c1">#assign row_name vector to the row names of the data.</span>
+<span class="kp">row.names</span><span class="p">(</span>d1<span class="p">)</span> <span class="o">&lt;-</span> row_name
+
+<span class="c1">#remove unformated gene names.</span>
+d1<span class="o">$</span>gene_names <span class="o">&lt;-</span> <span class="kc">NULL</span>
+</pre></div>
+</div>
+<p>Import necessary libraries.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="kn">library</span><span class="p">(</span>edgeR<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>DESeq2<span class="p">)</span>
+</pre></div>
+</div>
+<p>Filter data.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1">#Filter data with rowsum &lt; 10</span>
+d1<span class="o">$</span>rowsum <span class="o">&lt;-</span> <span class="kp">rowSums</span><span class="p">(</span>d1<span class="p">)</span>
+<span class="c1">#Low count filtered</span>
+d1_filterd <span class="o">&lt;-</span> d1<span class="p">[</span>d1<span class="o">$</span>rowsum <span class="o">&gt;</span> <span class="m">10</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Create a group file and normalize data using EdgeR.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>conds <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="kp">rep</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="kp">rep</span><span class="p">(</span><span class="s">&quot;T&quot;</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
+y <span class="o">&lt;-</span> DGEList<span class="p">(</span>counts<span class="o">=</span>d1_filterd<span class="p">,</span> group<span class="o">=</span>conds<span class="p">,</span> remove.zeros<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="c1"># Constructs DGEList object</span>
+
+dge<span class="o">=</span>calcNormFactors<span class="p">(</span>y<span class="p">)</span>
+</pre></div>
+</div>
+<p>A multi-dimensional scaling (MDS) plot to see the similarity among samples.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># color for controls</span>
+cn.color<span class="o">=</span><span class="s">&#39;blue&#39;</span>
+<span class="c1"># color for treatments</span>
+tr.color<span class="o">=</span><span class="s">&#39;brown&#39;</span>
+<span class="c1"># define a title for the plot</span>
+main<span class="o">=</span><span class="s">&#39;MDS Plot for Count Data&#39;</span>
+<span class="c1">#par(las=1) # makes y axis labels horizontal not vertical</span>
+colors<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="kp">rep</span><span class="p">(</span>cn.color<span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="kp">rep</span><span class="p">(</span>tr.color<span class="p">,</span><span class="m">3</span><span class="p">))</span>
+plotMDS<span class="p">(</span>dge<span class="p">,</span>main<span class="o">=</span>main<span class="p">,</span>labels<span class="o">=</span><span class="kp">colnames</span><span class="p">(</span>dge<span class="o">$</span>counts<span class="p">),</span>
+col<span class="o">=</span>colors<span class="p">,</span>las<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hierarchical clustering can also be used to check how different samples are. As you can see, sample T2 is very different from the rest.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>normalized.counts<span class="o">=</span>cpm<span class="p">(</span>dge<span class="p">)</span>
+transposed<span class="o">=</span><span class="kp">t</span><span class="p">(</span>normalized.counts<span class="p">)</span> <span class="c1"># transposes the counts matrix</span>
+distance<span class="o">=</span>dist<span class="p">(</span>transposed<span class="p">)</span> <span class="c1"># calculates distance</span>
+clusters<span class="o">=</span>hclust<span class="p">(</span>distance<span class="p">)</span> <span class="c1"># does hierarchical clustering</span>
+plot<span class="p">(</span>clusters<span class="p">)</span> <span class="c1"># plots the clusters as a dendrogram</span>
+</pre></div>
+</div>
+<p>Differential expression analysis</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>y <span class="o">&lt;-</span> estimateCommonDisp<span class="p">(</span>y<span class="p">)</span> <span class="c1"># Estimates common dispersion</span>
+y <span class="o">&lt;-</span> estimateTagwiseDisp<span class="p">(</span>y<span class="p">)</span> <span class="c1"># Estimates tagwise dispersion</span>
+et <span class="o">&lt;-</span> exactTest<span class="p">(</span>y<span class="p">,</span> pair<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">,</span> <span class="s">&quot;T&quot;</span><span class="p">))</span> <span class="c1"># Computes exact test for the negative binomial distribution.</span>
+topTags<span class="p">(</span>et<span class="p">,</span> n<span class="o">=</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Convert data into a dataframe and use dfr and fold change to select genes.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>edge <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span>topTags<span class="p">(</span>et<span class="p">,</span> n<span class="o">=</span><span class="m">50000</span><span class="p">))</span>
+edge2fold <span class="o">&lt;-</span> edge<span class="p">[</span>edge<span class="o">$</span>logFC <span class="o">&gt;=</span> <span class="m">1</span> <span class="o">|</span> edge<span class="o">$</span>logFC <span class="o">&lt;=</span> <span class="m">-1</span><span class="p">,]</span>
+edge2foldpadj <span class="o">&lt;-</span> edge2fold<span class="p">[</span>edge2fold<span class="o">$</span>FDR <span class="o">&lt;=</span> <span class="m">0.01</span><span class="p">,</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deseq-analysis">
+<h1>DEseq analysis<a class="headerlink" href="#deseq-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Create matrix for DESeq2 and prepare data for DEseq</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>d1_matrix <span class="o">&lt;-</span> <span class="kp">data.matrix</span><span class="p">(</span>d1_filterd<span class="p">)</span> <span class="c1">#Create matrix for DESeq2</span>
+
+genotype <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>Genotype<span class="o">=</span>conds<span class="p">)</span> <span class="c1"># create a dataframe for groups</span>
+
+
+
+dse <span class="o">&lt;-</span> DESeqDataSetFromMatrix<span class="p">(</span>countData <span class="o">=</span> d1_matrix<span class="p">,</span>
+                      colData <span class="o">=</span> genotype<span class="p">,</span>
+                      design <span class="o">=</span> <span class="o">~</span> Genotype<span class="p">)</span>
+
+colData<span class="p">(</span>dse<span class="p">)</span><span class="o">$</span>Genotype <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>colData<span class="p">(</span>dse<span class="p">)</span><span class="o">$</span>Genotype<span class="p">,</span>
+                        levels<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="s">&quot;T&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Differential expression analysis</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>dse <span class="o">&lt;-</span> DESeq<span class="p">(</span>dse<span class="p">)</span>
+dse <span class="o">&lt;-</span> DESeq<span class="p">(</span>dse<span class="p">)</span>
+
+ddsLocal <span class="o">&lt;-</span> estimateDispersions<span class="p">(</span>dse<span class="p">,</span> fitType<span class="o">=</span><span class="s">&quot;local&quot;</span><span class="p">,</span> maxit <span class="o">=</span><span class="m">500</span><span class="p">)</span>
+ddsLocal <span class="o">&lt;-</span> nbinomWaldTest<span class="p">(</span>ddsLocal<span class="p">)</span>
+res <span class="o">&lt;-</span> results<span class="p">(</span>ddsLocal<span class="p">)</span>
+</pre></div>
+</div>
+<p>Order the data using p-adjusted value.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>res <span class="o">&lt;-</span> res<span class="p">[</span><span class="kp">order</span><span class="p">(</span>res<span class="o">$</span>padj<span class="p">),]</span>
+<span class="kp">head</span><span class="p">(</span>res<span class="p">)</span>
+res <span class="o">&lt;-</span> na.omit<span class="p">(</span>res<span class="p">)</span>
+</pre></div>
+</div>
+<p>Use dfr and fold change to select genes.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>deseq_2fold <span class="o">&lt;-</span> res<span class="p">[</span>res<span class="o">$</span>log2FoldChange <span class="o">&gt;=</span> <span class="m">1</span> <span class="o">|</span> res<span class="o">$</span>log2FoldChange <span class="o">&lt;=</span> <span class="m">-1</span><span class="p">,]</span>
+deseq_2foldpadj <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>deseq_2fold<span class="p">[</span>deseq_2fold<span class="o">$</span>padj <span class="o">&lt;=</span> <span class="m">0.01</span><span class="p">,</span> <span class="p">])</span>
+bothDF <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>deseq_2foldpadj<span class="p">,</span> edge2foldpadj<span class="p">,</span> by<span class="o">=</span><span class="s">&quot;row.names&quot;</span><span class="p">,</span> all.x<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Writing results files. You can open &#8220;edgr_deseq2.txt&#8221; file in Excel if you want to look at it.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>write.table<span class="p">(</span><span class="kp">as.data.frame</span><span class="p">(</span>bothDF<span class="p">),</span> file<span class="o">=</span><span class="s">&quot;edgr_deseq2.txt&quot;</span><span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;\t&quot;</span><span class="p">,</span> quote <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> row.names<span class="o">=</span><span class="bp">F</span><span class="p">,</span> col.names<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="combine-deseq-and-edgr-to-make-venn-diagram">
+<h1>Combine DESeq and EdgR  to make Venn diagram<a class="headerlink" href="#combine-deseq-and-edgr-to-make-venn-diagram" title="Permalink to this headline">¶</a></h1>
+<p>Count how many gene from each analysis and make a Venn diagram. You need to have overLapper.R file (down loaded from Bb) in Counts folder.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="kn">source</span><span class="p">(</span><span class="s">&quot;overLapper.R&quot;</span><span class="p">)</span>
+
+setlist <span class="o">&lt;-</span> <span class="kt">list</span><span class="p">(</span>edgeR<span class="o">=</span><span class="kp">rownames</span><span class="p">(</span>edge2foldpadj<span class="p">),</span> DESeq<span class="o">=</span><span class="kp">rownames</span><span class="p">(</span>deseq_2foldpadj<span class="p">))</span>
+OLlist <span class="o">&lt;-</span> overLapper<span class="p">(</span>setlist<span class="o">=</span>setlist<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">,</span> type<span class="o">=</span><span class="s">&quot;vennsets&quot;</span><span class="p">)</span>
+counts <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span>OLlist<span class="o">$</span>Venn_List<span class="p">,</span> <span class="kp">length</span><span class="p">)</span>
+vennPlot<span class="p">(</span>counts<span class="o">=</span>counts<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="kellisto.html" class="btn btn-neutral" title="Use Kellisto to map reads to cDNA and count" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Asela Wijeratne.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'170218',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
