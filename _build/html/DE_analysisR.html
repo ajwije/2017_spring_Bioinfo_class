@@ -271,7 +271,7 @@ and combine with Temperate1 output. Repeat this for the next two data sets.</p>
 </div>
 </div></blockquote>
 <p>In the console, you will see the following message and the part underline in red is the path to your directory.</p>
-<p>Replace your path with &#8220;/Users/aselawijeratne/Desktop&#8221; in the following code. Execute this to read file into R.</p>
+<p>Replace your path in this portion of the following code &#8220;/Users/aselawijeratne/Desktop&#8221;. Execute this to read file into R.</p>
 <div class="highlight-r"><div class="highlight"><pre><span></span>d1<span class="o">=</span>read.delim<span class="p">(</span><span class="s">&#39;/Users/aselawijeratne/Desktop/Counts/counts.tabular&#39;</span><span class="p">,</span> header <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -327,13 +327,14 @@ col<span class="o">=</span>colors<span class="p">,</span>las<span class="o">=</s
 </pre></div>
 </div>
 <p>Hierarchical clustering can also be used to check how different samples are. As you can see, sample T2 is very different from the rest.</p>
-<div class="highlight-r"><div class="highlight"><pre><span></span>normalized.counts<span class="o">=</span>cpm<span class="p">(</span>dge<span class="p">)</span>
-transposed<span class="o">=</span><span class="kp">t</span><span class="p">(</span>normalized.counts<span class="p">)</span> <span class="c1"># transposes the counts matrix</span>
-distance<span class="o">=</span>dist<span class="p">(</span>transposed<span class="p">)</span> <span class="c1"># calculates distance</span>
-clusters<span class="o">=</span>hclust<span class="p">(</span>distance<span class="p">)</span> <span class="c1"># does hierarchical clustering</span>
-plot<span class="p">(</span>clusters<span class="p">)</span> <span class="c1"># plots the clusters as a dendrogram</span>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="o">&gt;</span>normalized.counts<span class="o">=</span>cpm<span class="p">(</span>dge<span class="p">)</span>
+<span class="o">&gt;</span>transposed<span class="o">=</span><span class="kp">t</span><span class="p">(</span>normalized.counts<span class="p">)</span> <span class="c1"># transposes the counts matrix</span>
+<span class="o">&gt;</span>distance<span class="o">=</span>dist<span class="p">(</span>transposed<span class="p">)</span> <span class="c1"># calculates distance</span>
+<span class="o">&gt;</span>clusters<span class="o">=</span>hclust<span class="p">(</span>distance<span class="p">)</span> <span class="c1"># does hierarchical clustering</span>
+<span class="o">&gt;</span>plot<span class="p">(</span>clusters<span class="p">)</span> <span class="c1"># plots the clusters as a dendrogram</span>
 </pre></div>
 </div>
+<p><a href="#id3"><span class="problematic" id="id4">|image1|</span></a></p>
 <p>Differential expression analysis</p>
 <div class="highlight-r"><div class="highlight"><pre><span></span>y <span class="o">&lt;-</span> estimateCommonDisp<span class="p">(</span>y<span class="p">)</span> <span class="c1"># Estimates common dispersion</span>
 y <span class="o">&lt;-</span> estimateTagwiseDisp<span class="p">(</span>y<span class="p">)</span> <span class="c1"># Estimates tagwise dispersion</span>

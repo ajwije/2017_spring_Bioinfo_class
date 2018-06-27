@@ -88,7 +88,7 @@ Open Rstudio and go to Session and select "Set Working Directory" and chose the 
 
 In the console, you will see the following message and the part underline in red is the path to your directory. 
 
-Replace your path with "/Users/aselawijeratne/Desktop" in the following code. Execute this to read file into R.
+Replace your path in this portion of the following code "/Users/aselawijeratne/Desktop". Execute this to read file into R.
 
 
 .. highlight:: r
@@ -182,11 +182,14 @@ Hierarchical clustering can also be used to check how different samples are. As 
 
 ::
 
-	normalized.counts=cpm(dge)
-	transposed=t(normalized.counts) # transposes the counts matrix
-	distance=dist(transposed) # calculates distance
-	clusters=hclust(distance) # does hierarchical clustering
-	plot(clusters) # plots the clusters as a dendrogram
+	>normalized.counts=cpm(dge)
+	>transposed=t(normalized.counts) # transposes the counts matrix
+	>distance=dist(transposed) # calculates distance
+	>clusters=hclust(distance) # does hierarchical clustering
+	>plot(clusters) # plots the clusters as a dendrogram
+
+|image1|
+
 
 Differential expression analysis
 

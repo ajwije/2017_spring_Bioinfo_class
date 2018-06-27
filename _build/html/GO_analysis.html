@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Inclass Activities 170218 documentation</title>
+  <title>GOseq analysis &mdash; Inclass Activities 170218 documentation</title>
   
 
   
@@ -34,9 +33,10 @@
 
   
         <link rel="index" title="Index"
-              href="#"/>
+              href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/> 
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="prev" title="Setup instructions (This is from Data Carpentry (http://www.datacarpentry.org/R-genomics/))" href="DE_analysisR.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -114,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Delta-Delta_Ct_Method.html">The Delta-Delta Ct Method</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Galaxy for HTS analysis</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_data.html">Getting data into Galaxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Galaxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="galaxy_adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
@@ -125,7 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#using-deseq-and-edger-to-find-differentially-expressed-genes">Using DEseq and EdgeR to find differentially expressed genes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#deseq-analysis">DEseq analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#combine-deseq-and-edgr-to-make-venn-diagram">Combine DESeq and EdgR  to make Venn diagram</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GO_analysis.html">GOseq analysis</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GOseq analysis</a></li>
 </ul>
 
             
@@ -170,12 +170,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>GOseq analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/GO_analysis.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -187,11 +189,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<hr class="docutils" />
+<div class="section" id="goseq-analysis">
+<h1>GOseq analysis<a class="headerlink" href="#goseq-analysis" title="Permalink to this headline">¶</a></h1>
+<p>1. Ge the up and down regulated gene list.
+&#8220;bothDF&#8221; is the dataframe that contains both up and down-regulated genes from both EdgeR and DEseq2.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>bothDF_down <span class="o">&lt;-</span> bothDF<span class="p">[</span>bothDF<span class="o">$</span>log2FoldChange <span class="o">&lt;=</span> <span class="m">-1</span><span class="p">,]</span>
+bothDF_up <span class="o">&lt;-</span> bothDF<span class="p">[</span>bothDF<span class="o">$</span>log2FoldChange <span class="o">&gt;=</span> <span class="m">1</span><span class="p">,]</span>
+</pre></div>
+</div>
+<p>Convert to these dataframes into table with True or False values. Write the table to local directory.</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>DE_list_boolup <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>d<span class="p">)</span> <span class="o">%in%</span> bothDF_up<span class="o">$</span>Row.names<span class="p">,</span>
+      row.names <span class="o">=</span> <span class="kp">row.names</span><span class="p">(</span>d<span class="p">))</span>
+DE_list_booldown <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>d<span class="p">)</span> <span class="o">%in%</span> bothDF_down<span class="o">$</span>Row.names<span class="p">,</span>
+                        row.names <span class="o">=</span> <span class="kp">row.names</span><span class="p">(</span>d<span class="p">))</span>
 
-<h1 id="index">Index</h1>
+write.table<span class="p">(</span>DE_list_boolup<span class="p">,</span>file<span class="o">=</span><span class="s">&quot;DE_goseq_up.txt&quot;</span><span class="p">,</span>row.names<span class="o">=</span><span class="bp">T</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span>quote<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
 
-<div class="genindex-jumpbox">
- 
+write.table<span class="p">(</span>DE_list_booldown<span class="p">,</span>file<span class="o">=</span><span class="s">&quot;DE_goseq_down.txt&quot;</span><span class="p">,</span>row.names<span class="o">=</span><span class="bp">T</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span>quote<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Perform the GOseq analysis in Galaxy. You will need to perform the analysis for up and down regulated genes separately.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/GOseq.png" src="_images/GOseq.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<hr class="docutils" />
+<ol class="arabic simple">
+<li>Combine gene descriptions with up and down regulated genes. You can get the S_lycopersicum_Feb_2014.bed file from the Dropbox link on Bb.</li>
+</ol>
+<div class="highlight-r"><div class="highlight"><pre><span></span>annots_file <span class="o">&lt;-</span> <span class="s">&#39;S_lycopersicum_Feb_2014.bed&#39;</span>
+<span class="c1"># keep gene id and gene description columns</span>
+annots <span class="o">&lt;-</span> read.delim<span class="p">(</span>annots_file<span class="p">,</span>sep<span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span>header<span class="o">=</span><span class="bp">F</span><span class="p">)[,</span><span class="m">13</span><span class="o">:</span><span class="m">14</span><span class="p">]</span>
+<span class="c1"># name the columns</span>
+<span class="kp">names</span><span class="p">(</span>annots<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;gene&#39;</span><span class="p">,</span><span class="s">&#39;description&#39;</span><span class="p">)</span>
+<span class="c1"># combine gene expression and annotations</span>
+bothDF_genedesc  <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>bothDF<span class="p">,</span>annots<span class="p">,</span> by.x <span class="o">=</span> <span class="s">&quot;Row.names&quot;</span><span class="p">,</span>by.y<span class="o">=</span><span class="s">&#39;gene&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -201,6 +243,13 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="DE_analysisR.html" class="btn btn-neutral" title="Setup instructions (This is from Data Carpentry (http://www.datacarpentry.org/R-genomics/))" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
