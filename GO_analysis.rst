@@ -45,9 +45,11 @@ Convert to these dataframes into table with True or False values. Write the tabl
 	DE_list_booldown <- as.data.frame(row.names(d) %in% bothDF_down$Row.names, 
                                 row.names = row.names(d))
 
-	write.table(DE_list_boolup,file="DE_goseq_up.txt",row.names=T,sep='\t',quote=F)
+	write.table(DE_list_boolup,file="DE_goseq_up.txt",row.names=T,sep='\t',quote=F,
+            col.names = F)
 
-	write.table(DE_list_booldown,file="DE_goseq_down.txt",row.names=T,sep='\t',quote=F)
+	write.table(DE_list_booldown,file="DE_goseq_down.txt",row.names=T,sep='\t',quote=F, 
+	col.names = F)
 
 
 
@@ -62,7 +64,7 @@ Convert to these dataframes into table with True or False values. Write the tabl
 ---------------------------------------------------
 
 
-1. Combine gene descriptions with up and down regulated genes. You can get the S_lycopersicum_Feb_2014.bed file from the Dropbox link on Bb.
+3. Combine gene descriptions with up and down regulated genes. You can get the S_lycopersicum_Feb_2014.bed file from the Dropbox link on Bb.
 
 
 
@@ -78,3 +80,13 @@ Convert to these dataframes into table with True or False values. Write the tabl
 	names(annots) <- c('gene','description')
 	# combine gene expression and annotations
 	bothDF_genedesc  <- merge(bothDF,annots, by.x = "Row.names",by.y='gene')
+	
+
+4. To order your data using FDR, you use the following command in R. 
+	
+.. highlight:: r
+
+::
+
+
+	bothDF_genedesc  <-  bothDF_genedesc[order(bothDF_genedesc$FDR), ]

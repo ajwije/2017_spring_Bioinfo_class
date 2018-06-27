@@ -207,9 +207,11 @@ bothDF_up <span class="o">&lt;-</span> bothDF<span class="p">[</span>bothDF<span
 DE_list_booldown <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>d<span class="p">)</span> <span class="o">%in%</span> bothDF_down<span class="o">$</span>Row.names<span class="p">,</span>
                         row.names <span class="o">=</span> <span class="kp">row.names</span><span class="p">(</span>d<span class="p">))</span>
 
-write.table<span class="p">(</span>DE_list_boolup<span class="p">,</span>file<span class="o">=</span><span class="s">&quot;DE_goseq_up.txt&quot;</span><span class="p">,</span>row.names<span class="o">=</span><span class="bp">T</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span>quote<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+write.table<span class="p">(</span>DE_list_boolup<span class="p">,</span>file<span class="o">=</span><span class="s">&quot;DE_goseq_up.txt&quot;</span><span class="p">,</span>row.names<span class="o">=</span><span class="bp">T</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span>quote<span class="o">=</span><span class="bp">F</span><span class="p">,</span>
+    col.names <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
 
-write.table<span class="p">(</span>DE_list_booldown<span class="p">,</span>file<span class="o">=</span><span class="s">&quot;DE_goseq_down.txt&quot;</span><span class="p">,</span>row.names<span class="o">=</span><span class="bp">T</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span>quote<span class="o">=</span><span class="bp">F</span><span class="p">)</span>
+write.table<span class="p">(</span>DE_list_booldown<span class="p">,</span>file<span class="o">=</span><span class="s">&quot;DE_goseq_down.txt&quot;</span><span class="p">,</span>row.names<span class="o">=</span><span class="bp">T</span><span class="p">,</span>sep<span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span>quote<span class="o">=</span><span class="bp">F</span><span class="p">,</span>
+col.names <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic" start="2">
@@ -222,7 +224,7 @@ write.table<span class="p">(</span>DE_list_booldown<span class="p">,</span>file<
 </li>
 </ol>
 <hr class="docutils" />
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li>Combine gene descriptions with up and down regulated genes. You can get the S_lycopersicum_Feb_2014.bed file from the Dropbox link on Bb.</li>
 </ol>
 <div class="highlight-r"><div class="highlight"><pre><span></span>annots_file <span class="o">&lt;-</span> <span class="s">&#39;S_lycopersicum_Feb_2014.bed&#39;</span>
@@ -232,6 +234,12 @@ annots <span class="o">&lt;-</span> read.delim<span class="p">(</span>annots_fil
 <span class="kp">names</span><span class="p">(</span>annots<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;gene&#39;</span><span class="p">,</span><span class="s">&#39;description&#39;</span><span class="p">)</span>
 <span class="c1"># combine gene expression and annotations</span>
 bothDF_genedesc  <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>bothDF<span class="p">,</span>annots<span class="p">,</span> by.x <span class="o">=</span> <span class="s">&quot;Row.names&quot;</span><span class="p">,</span>by.y<span class="o">=</span><span class="s">&#39;gene&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>To order your data using FDR, you use the following command in R.</li>
+</ol>
+<div class="highlight-r"><div class="highlight"><pre><span></span>bothDF_genedesc  <span class="o">&lt;-</span>  bothDF_genedesc<span class="p">[</span><span class="kp">order</span><span class="p">(</span>bothDF_genedesc<span class="o">$</span>FDR<span class="p">),</span> <span class="p">]</span>
 </pre></div>
 </div>
 </div>
