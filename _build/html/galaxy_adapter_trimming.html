@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Adapter and quality trimming using trim-galore &mdash; Inclass Activities 170218 documentation</title>
+  <title>Adapter and quality trimming using Cutadapt &mdash; Inclass Activities 170218 documentation</title>
   
 
   
@@ -36,6 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/>
+        <link rel="next" title="Use Splice aware aligner, Tophat2 to align short reads" href="tophat.html"/>
         <link rel="prev" title="FastQC analysis using Galaxy" href="GalaxyfastQC.html"/> 
 
   
@@ -117,10 +118,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_data.html">Getting data into Galaxy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Galaxy</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Adapter and quality trimming using trim-galore</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#step-1-launching-trim-galore-and-performing-the-analysis">Step 1: <strong>Launching Trim-galore and performing the analysis</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adapter and quality trimming using Cutadapt</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-launching-cutadapt-and-performing-the-analysis">Step 1: <strong>Launching Cutadapt and performing the analysis</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tophat.html">Use Splice aware aligner, Tophat2 to align short reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htseq.html">Use Htseq to counts reads mapped to features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kellisto.html">Use Kellisto to map reads to cDNA and count</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html">Setup instructions (This is from Data Carpentry (http://www.datacarpentry.org/R-genomics/))</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#using-deseq-and-edger-to-find-differentially-expressed-genes">Using DEseq and EdgeR to find differentially expressed genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#deseq-analysis">DEseq analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#combine-deseq-and-edgr-to-make-venn-diagram">Combine DESeq and EdgR  to make Venn diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GO_analysis.html">GOseq analysis</a></li>
 </ul>
 
             
@@ -165,7 +174,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Adapter and quality trimming using trim-galore</li>
+      <li>Adapter and quality trimming using Cutadapt</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -187,16 +196,16 @@
   <div class="figure align-right">
 <img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
 </div>
-<div class="section" id="adapter-and-quality-trimming-using-trim-galore">
-<h1>Adapter and quality trimming using trim-galore<a class="headerlink" href="#adapter-and-quality-trimming-using-trim-galore" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adapter-and-quality-trimming-using-cutadapt">
+<h1>Adapter and quality trimming using Cutadapt<a class="headerlink" href="#adapter-and-quality-trimming-using-cutadapt" title="Permalink to this headline">¶</a></h1>
 <p>We are going to use Trim-galore to trim adapters, and poor quality bases. This tool has several advantages. It allows selection
 multiple files. You can also select both forward and reverse reads. If you want to read more about Trim-galore,
 please visit their <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">website</a>.
 Also, Trim-galore is a wrapper for <a class="reference external" href="http://cutadapt.readthedocs.io/en/stable/guide.html#three-prime-adapters">Cutadapt</a> ,
 which is the actual tool that performs the trimming.</p>
 <p><em>Please follow the tutorial carefully.</em></p>
-<div class="section" id="step-1-launching-trim-galore-and-performing-the-analysis">
-<h2>Step 1: <strong>Launching Trim-galore and performing the analysis</strong><a class="headerlink" href="#step-1-launching-trim-galore-and-performing-the-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-launching-cutadapt-and-performing-the-analysis">
+<h2>Step 1: <strong>Launching Cutadapt and performing the analysis</strong><a class="headerlink" href="#step-1-launching-cutadapt-and-performing-the-analysis" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Type Trim-galore in the search box on top left hand corner.</li>
 </ol>
@@ -207,19 +216,44 @@ which is the actual tool that performs the trimming.</p>
 <li><p class="first">Select paired-end and select the two paired-end files are shown below. Use Illumina universal adapter to trim.</p>
 <blockquote>
 <div><div class="figure">
-<img alt="_images/trim_galore_1.png" src="_images/trim_galore_1.png" />
+<img alt="_images/cutadapt_1.png" src="_images/cutadapt_1.png" />
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Click on the advance settings. Set the parameters as indicated in red arrows.</p>
+<li><p class="first">Click on the advance settings. Set the parameters as indicated in blue arrows.</p>
 <blockquote>
 <div><div class="figure">
-<img alt="_images/trim_galore_2.png" src="_images/trim_galore_2.png" />
+<img alt="_images/cutadapt_2.png" src="_images/cutadapt_2.png" />
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Launch the analysis.</p>
-</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/cutadapt_3.png" src="_images/cutadapt_3.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/cutadapt_4.png" src="_images/cutadapt_4.png" />
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/cuadapt_5.png" src="_images/cuadapt_5.png" />
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Launch the analysis.</li>
 </ol>
 </div>
 </div>
@@ -233,6 +267,8 @@ which is the actual tool that performs the trimming.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tophat.html" class="btn btn-neutral float-right" title="Use Splice aware aligner, Tophat2 to align short reads" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="GalaxyfastQC.html" class="btn btn-neutral" title="FastQC analysis using Galaxy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

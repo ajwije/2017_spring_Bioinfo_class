@@ -12,7 +12,7 @@
    :align: right
 
 ****************************************************************
-Adapter and quality trimming using trim-galore
+Adapter and quality trimming using Cutadapt
 ****************************************************************
 
 We are going to use Trim-galore to trim adapters, and poor quality bases. This tool has several advantages. It allows selection
@@ -25,19 +25,34 @@ which is the actual tool that performs the trimming.
 
 *Please follow the tutorial carefully.*
 
-Step 1: **Launching Trim-galore and performing the analysis**
+Step 1: **Launching Cutadapt and performing the analysis**
 ------------------------------------------
 1. Type Trim-galore in the search box on top left hand corner. 
 
 |
 2. Select paired-end and select the two paired-end files are shown below. Use Illumina universal adapter to trim. 
  
-	.. figure:: img/trim_galore_1.png
+	.. figure:: img/cutadapt_1.png
 	
-3. Click on the advance settings. Set the parameters as indicated in red arrows. 
+3. Click on the advance settings. Set the parameters as indicated in blue arrows. 
 
-	.. figure:: img/trim_galore_2.png
+	.. figure:: img/cutadapt_2.png
 
+
+|
+
+
+	.. figure:: img/cutadapt_3.png
+
+|
+
+	.. figure:: img/cutadapt_4.png
+
+|
+
+	.. figure:: img/cuadapt_5.png
+	
+	
 4. Launch the analysis. 
 
 
