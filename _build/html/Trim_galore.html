@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adapter and quality trimming using trim-galore &mdash; Inclass Activities 170218 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Inclass Activities 170218 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Inclass Activities
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Bioinformatics part I</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="MEGA_alignment.html">1. Multiple Sequence Alignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics.html">2. Steps of building a tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phylogenetics_2.html">3. Steps of building a tree (Part II)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">High-throughput data analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fastQC.html">FastQC analysis using Cyverse Discovery Environment (DE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relaunch.html">Relaunching a stalled analysis in Cyverse Discovery Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adapter_trimming.html">Adapter and quality trimming using trim-galore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping short reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flag_stat.html">Counting mapped reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysis.html">Differential gene expression analysis</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Protein analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="protein_structure.html">Secondary Structure Prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protein_structure.html#tertiary-structure-prediction">Tertiary Structure Prediction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">qPCR data analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Delta-Delta_Ct_Method.html">The Delta-Delta Ct Method</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Galaxy for HTS analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_data.html">Getting data into Galaxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GalaxyfastQC.html">FastQC analysis using Galaxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galaxy_adapter_trimming.html">Adapter and quality trimming using Cutadapt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tophat.html">Use Splice aware aligner, Tophat2 to align short reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="htseq.html">Use Htseq to counts reads mapped to features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kellisto.html">Use Kellisto to map reads to cDNA and count</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html">Setup instructions (This is from Data Carpentry (http://www.datacarpentry.org/R-genomics/))</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#using-deseq-and-edger-to-find-differentially-expressed-genes">Using DEseq and EdgeR to find differentially expressed genes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#deseq-analysis">DEseq analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DE_analysisR.html#combine-deseq-and-edgr-to-make-venn-diagram">Combine DESeq and EdgR  to make Venn diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GO_analysis.html">GOseq analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Run RNAseq analysis as a workflow</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inclass Activities</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Adapter and quality trimming using trim-galore</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Trim_galore.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="figure align-right">
+<img alt="_images/UnivLogo_Stack_2C_Dark.png" src="_images/UnivLogo_Stack_2C_Dark.png" />
+</div>
+<div class="section" id="adapter-and-quality-trimming-using-trim-galore">
+<h1>Adapter and quality trimming using trim-galore<a class="headerlink" href="#adapter-and-quality-trimming-using-trim-galore" title="Permalink to this headline">¶</a></h1>
+<p>We are going to use Trim-galore to trim adapters, and poor quality bases. This tool has several advantages. It allows selection
+multiple files. You can also select both forward and reverse reads. If you want to read more about Trim-galore,
+please visit their <a class="reference external" href="http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">website</a>.
+Also, Trim-galore is a wrapper for <a class="reference external" href="http://cutadapt.readthedocs.io/en/stable/guide.html#three-prime-adapters">Cutadapt</a> ,
+which is the actual tool that performs the trimming.</p>
+<p><em>Please follow the tutorial carefully.</em></p>
+<div class="section" id="step-1-launching-trim-galore">
+<h2>Step 1: <strong>Launching Trim-galore</strong><a class="headerlink" href="#step-1-launching-trim-galore" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In the finder window type &#8220;trim-galore&#8221;</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Select &#8220;Trim Galore&#8221;.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_galore_1.jpg" src="_images/trim_galore_1.jpg" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-2-selecting-input-files">
+<h2>Step 2: <strong>Selecting input files</strong><a class="headerlink" href="#step-2-selecting-input-files" title="Permalink to this headline">¶</a></h2>
+<p>As indicated in the figure:
+1. Is this library paired- or single-end? &#8220;Paired-end&#8221;</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Adapter sequence to be trimmed: &#8220;Select Illumina universal&#8221;</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_galore_2.jpg" src="_images/trim_galore_2.jpg" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="step-3-advance-settings">
+<h2>Step 3: <strong>Advance settings</strong><a class="headerlink" href="#step-3-advance-settings" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">From &#8220;Trim Galore! advanced settings&#8221; select &#8220;Full parameter list&#8221;</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_galore_3.jpg" src="_images/trim_galore_3.jpg" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Set &#8220;Overlap with adapter sequence required to trim a sequence&#8221; to 6.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="_images/trim_galore_4.jpg" src="_images/trim_galore_4.jpg" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Run the analysis.</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Asela Wijeratne.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'170218',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

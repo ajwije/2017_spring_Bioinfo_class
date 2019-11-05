@@ -53,6 +53,7 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    kellisto.rst
    DE_analysisR.rst
    GO_analysis.rst
+   workflow.rst
    
    
    
