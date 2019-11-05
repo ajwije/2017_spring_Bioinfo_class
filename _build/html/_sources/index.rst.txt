@@ -48,6 +48,7 @@ BIOINFORMATICS AND APPLICATIONS BIO 4033/ BIO 5033
    getting_data.rst
    GalaxyfastQC.rst   
    galaxy_adapter_trimming.rst
+   Trim_galore.rst
    tophat.rst
    htseq.rst
    kellisto.rst
